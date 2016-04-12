@@ -1,3 +1,17 @@
+#_me {
+    position: fixed;
+    z-index: 10;
+    right: 5px;
+    bottom: 3px;
+    margin: 0;
+    padding: 0;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    color: #666;
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
 #_cqupt {
     display: inline-block;
     position: fixed;

@@ -1,7 +1,7 @@
 ## 内网外入 | CQUPT
 
 ##### 地址：https://cqupt.congm.in
-##### 博文：http://wp.congm.in/?p=442
+##### 博文：https://i.congm.in/cqupt-inner
 ##### 统计：http://new.cnzz.com/v1/login.php?siteid=1257517721
 ##### 作者：https://congm.in
 

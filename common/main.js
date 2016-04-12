@@ -15,7 +15,7 @@ var _hmt = _hmt || [];
 /* CNZZ统计 */
 (function() {
     var cnzz = document.createElement("script");
-    cnzz.src = "//s4.cnzz.com/z_stat.php?id=1257517721";
+    cnzz.src = "//congm.in/tongji/cqupt.congm.in.js";
     if(self == top){
         document.body.appendChild(cnzz);
     }
@@ -31,7 +31,10 @@ var _hmt = _hmt || [];
     }
     /* 插入dom */
     css.onload = function(){
-        var a = '<a href="//cqupt.congm.in" id="_cqupt">' +
+        var a = '<a href="//congm.in" id="_me">' +
+                    '@ Cong Min' +
+                '</a>' +
+                '<a href="//cqupt.congm.in" id="_cqupt">' +
                     '内网外入<br>' +
                     '<small>cqupt.congm.in</small>' +
                 '</a>' +
