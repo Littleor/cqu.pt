@@ -127,12 +127,12 @@ $(function() {
             //判断host是否有端口号
             if (in_host.indexOf(":") == -1) {
                 host_reg_result = reg(host_reg, in_host);
-                out_host = "http://" + in_host + suffix;
+                out_host = "https://" + in_host + suffix;
             } else {
                 host_array = in_host.split(":");
                 host_reg_result = reg(host_reg, host_array[0]);
                 port_reg_result = reg(port_reg, host_array[1]);
-                out_host = "http://" +  host_array[0] + suffix + ":" + host_array[1];
+                out_host = "https://" +  host_array[0] + suffix + ":" + host_array[1];
             }
             return out_host;
         };

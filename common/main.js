@@ -106,6 +106,7 @@ var duoshuoQuery = {short_name:"cqupt-inner"};
     for(var i = 0; i < all_a.length; i++){
         var url_array = all_a[i].href.split("/");
         if(url_array.length > 2 && all_a[i].href.indexOf("//") != -1 && url_array[2].indexOf("cqupt.congm.in") == -1){
+            url_array[0] = "https:"; //https
             if(url_array[2].indexOf(":") == -1){
                 url_array[2] += ".cqupt.congm.in";
             }else{
@@ -121,6 +122,7 @@ var duoshuoQuery = {short_name:"cqupt-inner"};
     for(var i = 0; i < img_a.length; i++){
         var url_array = img_a[i].src.split("/");
         if(url_array.length > 2 && img_a[i].src.indexOf("//") != -1 && url_array[2].indexOf("cqupt.congm.in") == -1){
+            url_array[0] = "https:"; //https
             if(url_array[2].indexOf(":") == -1){
                 url_array[2] += ".cqupt.congm.in";
             }else{
