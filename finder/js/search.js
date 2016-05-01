@@ -106,7 +106,7 @@ function search(key){
             $(".student-table tbody").html("");
 
             var student = students[$(this).data("id")],
-                html = '<tr><td>学号：' + student.name + '</td><td>性别：' + student.sex + '</td></tr><tr><td>班级：' + student.class + '</td><td>专业：' + student.major + '</td></tr><tr><td>年级：' + student.grade + '</td><td>学院：' + student.college + '</td></tr><tr><td><button class="btn btn-success" href="#" onclick="search(\'' + student.class + '\')">该班学生名单</button></td><td><a class="btn btn-danger" href="https://jwzx.cqupt.congm.in/pubStuKebiao.php?xh=' + student.id + '" target="_blank">个人课表</a></td></tr>';
+                html = '<tr><td>姓名：' + student.name + '</td><td>性别：' + student.sex + '</td></tr><tr><td>班级：' + student.class + '</td><td>专业：' + student.major + '</td></tr><tr><td>年级：' + student.grade + '</td><td>学院：' + student.college + '</td></tr><tr><td><button class="btn btn-sm btn-success" href="#" onclick="search(\'' + student.class + '\')">该班学生名单</button></td><td><a class="btn btn-sm btn-danger" href="https://jwzx.cqupt.congm.in/pubStuKebiao.php?xh=' + student.id + '" target="_blank">个人课表</a></td></tr>';
             $(".student-id").html("【" + student.id + " - " + student.name + "】");
             $(".student-img").attr("src", "https://jwzx.cqupt.congm.in/showstuPic.php?xh=" + student.id.replace(space,''));
             $(".student-table tbody").html(html);

@@ -2,6 +2,8 @@
 <html lang="zh-CN">
     <head>
         <meta charset="gb2312">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Finder</title>
         <link rel="shortcut icon" href="img/finder.png" type="imgae/x-icon">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,21 +23,23 @@
             </div>
         </header>
         <div class="container">
-            <div class="info-box">
+            <div class="info-box" data-spy="affix" data-offset-top="420">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title student-id">【 学号 - 姓名 】</h3>
                         <a class="glyphicon glyphicon-remove panel-close"></a>
                     </div>
-                    <img class="pull-left student-img" alt="photo" />
-                    <div class="student-info table-responsive">
-                        <table class="table table-hover student-table">
-                            <tbody></tbody>
-                        </table>
+                    <div class="panel-body">
+                        <img class="pull-left student-img" alt="photo" />
+                        <div class="student-info">
+                            <table class="table table-hover table-bordered student-table">
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="list">
+            <div class="table-responsive list">
                 <table class="table table-hover table-striped list-table">
                     <tbody></tbody>
                 </table>
