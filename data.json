@@ -1,7 +1,7 @@
 {
     "warn": [
-        "由于未知原因，部分网址不能正常使用。临时解决方案，将网址改为https开头再进行访问...",
-        "如您有任何问题意见建议，<a href='https://github.com/mcc108/cqupt.congm.in/issues'>请到Github上的本托管项目中提交issues</a>，或者<a href='http://congm.in'>联系作者Cong Min.</a>",
+        "问题已解决，现在可以正常安全使用..🐳",
+        "如您有任何问题意见建议，<a href='https://github.com/mcc108/cqupt.congm.in/issues'>请到Github上的本托管项目中提交issues</a>，或者<a href='http://congm.in'>联系作者Cong Min.</a>🌝",
         "为了方便大家长期使用以及保证内网安全，请文明和谐的使用，不要调皮，切记切记~👮"
     ],
     "tagsList": [
@@ -14,31 +14,31 @@
             "title": "教务在线"
         },
         {
-            "href": "https://bbs.cqupt.edu.cn.cqupt.congm.in/bbs/forum.php",
+            "href": "http://bbs.cqupt.edu.cn.cqupt.congm.in/bbs/forum.php",
             "title": "幽幽黄桷兰"
         },
         {
-            "href": "https://oa.cqupt.edu.cn.cqupt.congm.in",
+            "href": "http://oa.cqupt.edu.cn.cqupt.congm.in",
             "title": "校务信息网"
         },
         {
-            "href": "https://222.177.140.105.cqupt.congm.in",
+            "href": "http://222.177.140.105.cqupt.congm.in",
             "title": "网上党校"
         },
         {
-            "href": "https://tsg.cqupt.edu.cn",
+            "href": "http://tsg.cqupt.edu.cn",
             "title": "图书馆"
         },
         {
-            "href": "https://xk2.cqupt.edu.cn.cqupt.congm.in/",
+            "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/",
             "title": "选课地址2"
         },
         {
-            "href": "https://xk4.cqupt.edu.cn.cqupt.congm.in",
+            "href": "http://xk4.cqupt.edu.cn.cqupt.congm.in",
             "title": "选课地址4"
         },
         {
-            "href": "https://xk2.cqupt.edu.cn.cqupt.congm.in/",
+            "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/",
             "title": "学评教"
         }
     ]
