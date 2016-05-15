@@ -26,20 +26,16 @@
             "title": "网上党校"
         },
         {
-            "href": "http://tsg.cqupt.edu.cn",
-            "title": "图书馆"
-        },
-        {
             "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/",
-            "title": "选课地址2"
-        },
-        {
-            "href": "http://xk4.cqupt.edu.cn.cqupt.congm.in",
-            "title": "选课地址4"
+            "title": "选课地址"
         },
         {
             "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/",
             "title": "学评教"
+        },
+        {
+            "href": "http://oj.cqupt.edu.cn.cqupt.congm.in",
+            "title": "ACM/OJ"
         }
     ]
 }
