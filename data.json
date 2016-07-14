@@ -1,7 +1,6 @@
 {
     "warn": [
-        "问题已解决，现在可以正常安全使用..🐳",
-        "如您有任何问题意见建议，<a href='https://github.com/mcc108/cqupt.congm.in/issues'>请到Github上的本托管项目中提交issues</a>，或者<a href='http://congm.in'>联系作者Cong Min.</a>🌝",
+        "如您有任何问题意见建议，<a href='http://congm.in'>请联系作者Cong Min.</a>，或者<a href='https://github.com/mcc108/cqupt.congm.in/issues'>到Github上的本托管项目中提交issues</a>🌝",
         "为了方便大家长期使用以及保证内网安全，请文明和谐的使用，不要调皮，切记切记~👮"
     ],
     "tagsList": [
@@ -26,11 +25,19 @@
             "title": "网上党校"
         },
         {
-            "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/",
-            "title": "选课地址"
+            "href": "http://xk1.cqupt.edu.cn.cqupt.congm.in/",
+            "title": "选课地址1"
         },
         {
             "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/",
+            "title": "选课地址2"
+        },
+        {
+            "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/",
+            "title": "选课地址4"
+        },
+        {
+            "href": "http://xk2.cqupt.edu.cn.cqupt.congm.in/xpj2014/",
             "title": "学评教"
         },
         {

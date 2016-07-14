@@ -107,7 +107,7 @@ $(function() {
     });
     //转换地址
     var turl = function (in_url) {
-        var host, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, port_reg = /^([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/, host_reg_result, port_reg_result = true;
+        var host, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, port_reg = /^([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/, host_reg_result = false, port_reg_result = true;
         var reg = function (reg, str) {
             return !!reg.test(str);
         };
@@ -121,18 +121,19 @@ $(function() {
             }
             //判断host是否为教务在线
             if (in_host == "jwzx.cqupt.edu.cn") {
+                host_reg_result = true;
                 out_host = "https://jwzx.cqupt.congm.in";
-                return out_host;
-            }
-            //判断host是否有端口号
-            if (in_host.indexOf(":") == -1) {
-                host_reg_result = reg(host_reg, in_host);
-                out_host = "http://" + in_host + suffix;
-            } else {
-                host_array = in_host.split(":");
-                host_reg_result = reg(host_reg, host_array[0]);
-                port_reg_result = reg(port_reg, host_array[1]);
-                out_host = "http://" +  host_array[0] + suffix + ":" + host_array[1];
+            }else{
+                //判断host是否有端口号
+                if (in_host.indexOf(":") == -1) {
+                    host_reg_result = reg(host_reg, in_host);
+                    out_host = "http://" + in_host + suffix;
+                } else {
+                    host_array = in_host.split(":");
+                    host_reg_result = reg(host_reg, host_array[0]);
+                    port_reg_result = reg(port_reg, host_array[1]);
+                    out_host = "http://" +  host_array[0] + suffix + ":" + host_array[1];
+                }
             }
             return out_host;
         };

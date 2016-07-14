@@ -64,6 +64,7 @@ var _hmt = _hmt || [];
                         '</div>' +
                     '</div>' +
                 '</div>';
+        a += '<a class="iUp" id="lanshan2016" href="http://jq.qq.com/?_wv=1027&k=2CKYKx6" target="_blank">内网外入交流群：312784909</a>';
         if(self == top){
             document.body.insertAdjacentHTML("afterbegin", a);
         }
@@ -86,6 +87,23 @@ var _hmt = _hmt || [];
             discuss.className = "";
             side.className = "";
         };
+        //升起动画控制
+        var iUp = (function() {
+            var t = 0,
+                up = function(e) {
+                    setTimeout(function() {
+                        e.className += " up";
+                    }, t);
+                    t += 200;
+                };
+            return {
+                up: up
+            }
+        })();
+        var iUps = document.querySelectorAll(".iUp");
+        for(var i = 0, length = iUps.length; i < length; i++){
+            iUp.up(iUps[i]);
+        }
     };
 })();
 
