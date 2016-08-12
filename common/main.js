@@ -40,7 +40,7 @@ var _hmt = _hmt || [];
                 '</a>' +
                 '<div id="_cqupt-discuss">' +
                     '<span class="_cqupt-iconfont _cqupt-pinglun">&#xf00f8;</span>' +
-                    '<span class="_cqupt-pinglun-text">评论</span>' +
+                    '<span class="_cqupt-pinglun-text">内网外入</span>' +
                 '</div>' +
                 '<div id="_cqupt-side-box">' +
                     '<header class="_cqupt-header">' +
