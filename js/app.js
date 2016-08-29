@@ -107,7 +107,7 @@ $(function() {
     });
     //转换地址
     var turl = function (in_url) {
-        var host, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, port_reg = /^([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/, host_reg_result = false, port_reg_result = true;
+        var host, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, host_reg_result = false, port_reg_result = true;
         var reg = function (reg, str) {
             return !!reg.test(str);
         };
@@ -129,10 +129,10 @@ $(function() {
                     host_reg_result = reg(host_reg, in_host);
                     out_host = "http://" + in_host + suffix;
                 } else {
+                    port_reg_result = false;
                     host_array = in_host.split(":");
                     host_reg_result = reg(host_reg, host_array[0]);
-                    port_reg_result = reg(port_reg, host_array[1]);
-                    out_host = "http://" +  host_array[0] + suffix + ":" + host_array[1];
+                    out_host = "http://" +  host_array[0];
                 }
             }
             return out_host;
@@ -143,23 +143,37 @@ $(function() {
         out_url = thost(host);
         //拼接地址
         for (var j = 1; j < url_array.length; j++) {
-            out_url += "/" + url_array[j];
+            if(url_array[j]){
+                out_url += "/" + url_array[j];
+            }
         }
         if (url_array[url_array.length-1].indexOf(".") == -1) {
             out_url += "/";
         }
-        if (host_reg_result && port_reg_result) {
-            more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>(若无法访问请检查地址或<a href="http://congm.in">联系作者Cong Min</a>)</small>');
-            return out_url;
+        if (!host_reg_result) {
+            more_text.html('输入的内网地址，格式有误！<br>请检查后重新输入。');
+            out_url = 0;
         } else {
-            more_text.html('输入的内网地址，格式有误！<br>请检查后重新输入。(注: http://前缀已补全)');
-            return 0;
+            if (!port_reg_result) {
+                more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>温馨提醒: 内网外入只支持访问80端口网站!</small>');
+            } else {
+                more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>(若无法访问请检查地址或<a href="http://congm.in">联系作者Cong Min</a>)</small>');
+            }
         }
+        return out_url;
     };
     //输入框确认点击
     enter.on("click", function () {
         more.show();
         var main_input_val = main_input.val();
+        if (main_input_val.indexOf("http://") != -1) {
+            main_input_val = main_input_val.split("http://")[1];
+            main_input.val(main_input_val);
+        }
+        if (main_input_val.indexOf("https://") != -1 ) {
+            main_input_val = main_input_val.split("https://")[1];
+            main_input.val(main_input_val);
+        }
         var url = turl(main_input_val);
         if (url) {
             window.open(url);
