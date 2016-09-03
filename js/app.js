@@ -107,7 +107,7 @@ $(function() {
     });
     //转换地址
     var turl = function (in_url) {
-        var host, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, host_reg_result = false, port_reg_result = true;
+        var host, host_array, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, host_reg_result = false, port_reg_result = true;
         var reg = function (reg, str) {
             return !!reg.test(str);
         };
@@ -132,7 +132,7 @@ $(function() {
                     port_reg_result = false;
                     host_array = in_host.split(":");
                     host_reg_result = reg(host_reg, host_array[0]);
-                    out_host = "http://" +  host_array[0];
+                    out_host = "http://" +  host_array[0] + suffix;
                 }
             }
             return out_host;
