@@ -165,7 +165,7 @@ $(function() {
     //输入框确认点击
     enter.on("click", function () {
         more.show();
-        var main_input_val = main_input.val();
+        var main_input_val = $.trim(main_input.val());
         if (main_input_val.indexOf("http://") != -1) {
             main_input_val = main_input_val.split("http://")[1];
             main_input.val(main_input_val);
