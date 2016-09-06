@@ -155,7 +155,7 @@ $(function() {
             out_url = 0;
         } else {
             if (!port_reg_result) {
-                more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>温馨提醒: 内网外入只支持访问80端口网站!</small>');
+                more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>温馨提醒: 内网外入只支持访问默认80端口网站!</small>');
             } else {
                 more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>(若无法访问请检查地址或<a href="http://congm.in">联系作者Cong Min</a>)</small>');
             }
