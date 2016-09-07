@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
                                 '<h2>捐助列表</h2>' +
                                 '<table class="_cqupt-donate-list">' +
                                     '<thead><tr>' +
-                                        '<th>账户</th><th>用户名</th><th>时间</th><th>捐助金额</th>' +
+                                        '<th>账户</th><th>用户名</th><th>时间</th><th>金额</th>' +
                                     '</tr></thead>' +
                                 '</table>' +
                             '</div>' +
