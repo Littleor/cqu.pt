@@ -10,7 +10,6 @@
   ├─── common
   │    ├── main.css  //插入至内网每个页面的css样式（通过main.js插入）
   │    └── main.js   //插入至内网每个页面的css脚本（通过nginx sub_filter插入）
-  ├─── doc         //一些没用的介绍文档
   ├─── img         //主页图片
   ├─── js          //主页脚本
   ├─── nginx_conf

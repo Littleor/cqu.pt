@@ -31,79 +31,144 @@ var _hmt = _hmt || [];
     }
     /* 插入dom */
     css.onload = function(){
-        var a = '<a href="//congm.in" id="_me">' +
-                    '@ Cong Min' +
-                '</a>' +
-                '<a href="//cqupt.congm.in" id="_cqupt">' +
-                    '内网外入<br>' +
-                    '<small>cqupt.congm.in</small>' +
-                '</a>' +
-                '<div id="_cqupt-discuss">' +
-                    '<span class="_cqupt-iconfont _cqupt-pinglun">&#xf00f8;</span>' +
-                    '<span class="_cqupt-pinglun-text">内网外入</span>' +
-                '</div>' +
-                '<div id="_cqupt-side-box">' +
+        var a = '<div id="_cqupt-side-box">' +
+                    '<div class="_cqupt-side-bar">' +
+                        '<div class="_cqupt-side-bar-item" id="_cqupt-title">' +
+                            '<a href="//cqupt.congm.in" target="_blank">内网外入</a>' +
+                        '</div>' +
+                        '<div class="_cqupt-side-bar-top">' +
+                            '<div class="_cqupt-side-bar-item">' +
+                                '<a href="//cqupt.congm.in">' +
+                                    '<span class="_cqupt-iconfont _cqupt-pinglun">&#xe601;</span>' +
+                                '</a>' +
+                            '</div>' +
+                            '<div class="_cqupt-side-bar-item">' +
+                                '<a href="https://github.com/mcc108/cqupt.congm.in" target="_blank">' +
+                                    '<span class="_cqupt-iconfont _cqupt-pinglun">&#xe602;</span>' +
+                                '</a>' +
+                            '</div>' +
+                            '<div class="_cqupt-side-bar-item">' +
+                                '<a href="http://jq.qq.com/?_wv=1027&k=2CKYKx6" target="_blank">' +
+                                    '<span class="_cqupt-iconfont _cqupt-pinglun">&#xe605;</span>' +
+                                '</a>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="_cqupt-side-bar-bottom">' +
+                            '<div class="_cqupt-side-bar-item" id="_cqupt-discuss">' +
+                                '<span class="_cqupt-iconfont _cqupt-pinglun">&#xe600;</span>' +
+                            '</div>' +
+                            '<div class="_cqupt-side-bar-item" id="_cqupt-donate-btn">' +
+                                '<span class="_cqupt-iconfont _cqupt-pinglun">&#xe603;</span>' +
+                            '</div>' +
+                            '<div class="_cqupt-side-bar-item" id="_cqupt-info-btn">' +
+                                '<span class="_cqupt-iconfont _cqupt-pinglun">&#xe604;</span>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
                     '<header class="_cqupt-header">' +
                         '<div id="_cqupt-discuss-close"><img src="//cqupt.congm.in/img/close.png"></div>' +
                     '</header>' +
                     '<div class="_cqupt-content">' +
-                        '<div class="_cqupt-duosuo" id="_cqupt-duosuo">' +
-                            '<div class="ds-share flat" data-thread-key="1" data-title="内网外入 - CQUPT" data-images="https://cqupt.congm.in/img/cqupt.png" data-content="一站解决外网访问教务在线等内网所有网页！" data-url="https://cqupt.congm.in">' +
-                                '<div class="ds-share-inline">' +
-                                    '<ul class="ds-share-icons-16">' +
-                                        '<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享:</a></li>' +
-                                        '<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>' +
-                                        '<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>' +
-                                        '<li><a class="ds-qq" href="javascript:void(0);" data-service="qq">QQ</a></li>' +
-                                        '<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">空间</a></li>' +
-                                    '</ul>' +
-                                    '<div class="ds-share-icons-more"></div>' +
+                        '<div class="_cqupt-content-item _cqupt-hidden" id="_cqupt-duosuo">' +
+                            '<div class="_cqupt-content-hd">评论</div>' +
+                            '<div class="_cqupt-content-bd">' +
+                                '<div class="ds-share flat" data-thread-key="1" data-title="内网外入 - CQUPT" data-images="https://cqupt.congm.in/img/cqupt.png" data-content="一站解决外网访问教务在线等内网所有网页！" data-url="https://cqupt.congm.in">' +
+                                    '<div class="ds-share-inline">' +
+                                        '<ul class="ds-share-icons-16">' +
+                                            '<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享:</a></li>' +
+                                            '<li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>' +
+                                            '<li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>' +
+                                            '<li><a class="ds-qq" href="javascript:void(0);" data-service="qq">QQ</a></li>' +
+                                            '<li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">空间</a></li>' +
+                                        '</ul>' +
+                                        '<div class="ds-share-icons-more"></div>' +
+                                    '</div>' +
+                                '</div>' +
+                                '<span class="_cqupt-loading">正在加载中...</span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="_cqupt-content-item _cqupt-hidden" id="_cqupt-donate">' +
+                            '<div class="_cqupt-content-hd">捐助</div>' +
+                            '<div class="_cqupt-content-bd">' +
+                                '<h3><span class="_cqupt-label _cqupt-label-o">内网外入</span> (cqupt.congm.in) 是一个免费的系统，但是内网外入服务器需要网络和维护的成本。</p>' +
+                                '<p>如果您觉得内网外入极大方便您的日常使用，您可以选择自愿通过捐赠来促进内网外入的健康维护和发展，内网外入也需要大家的点滴支持。</p>' +
+                                '<p class="_cqupt-small">支付宝帐号：i@congm.in / 这是昵称 (闵聪)</p>' +
+                                '<img src="//cqupt.congm.in/img/alipay.png" class="_cqupt-donate-img">' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="_cqupt-content-item _cqupt-hidden" id="_cqupt-info">' +
+                            '<div class="_cqupt-content-hd">关于</div>' +
+                            '<div class="_cqupt-content-bd">' +
+                                '<h2>内网外入 (cqupt.congm.in) </h2>' +
+                                '<h3><span class="_cqupt-label _cqupt-label-sm">个人项目</span> <span class="_cqupt-label _cqupt-label-sm">非官方项目</span></h3>' +
+                                '<p>该系统利用nginx服务器反向代理，解决了同学通过外网无法访问内网的问题。该系统在保证内网安全的前提下，可以随时随地进入内网查询自己的个人课表、考试安排、期末成绩，进行选课等，极大方便同学们的日常使用。 网页上线十个月来PV总访问量超过65万多次，PV单日峰值达5万多次，UV日均访客约1000人，UV访客峰值约10000人。</p>' +
+                                '<div class="_cqupt-info-list">' +
+                                    '<p>官网：<a href="//cqupt.congm.in" target="_blank">cqupt.congm.in</a></h3>' +
+                                    '<p>Github：<a href="https://github.com/mcc108/cqupt.congm.in" target="_blank">github.com/mcc108/cqupt.congm.in</a></h3>' +
+                                    '<p>交流群：<a href="http://jq.qq.com/?_wv=1027&k=2CKYKx6" target="_blank">312784909</a></h3>' +
+                                    '<p>博文：<a href="//i.congm.in/cqupt-inner" target="_blank">i.congm.in/cqupt-inner</a></h3>' +
+                                    '<p>统计：<a href="http://new.cnzz.com/v1/login.php?siteid=1257517721" target="_blank">CNZZ</a></h3>' +
+                                    '<p>作者：<a href="//congm.in" target="_blank">@ Cong Min</a></h3>' +
                                 '</div>' +
                             '</div>' +
-                            '<span class="_cqupt-loading">正在加载中...</span>' +
                         '</div>' +
                     '</div>' +
                 '</div>';
-        a += '<a class="iUp" id="lanshan2016" href="http://jq.qq.com/?_wv=1027&k=2CKYKx6" target="_blank">内网外入交流群：312784909</a>';
         if(self == top){
             document.body.insertAdjacentHTML("afterbegin", a);
         }
         /* side-box */
-        var discuss = document.getElementById("_cqupt-discuss");
-        var side = document.getElementById("_cqupt-side-box");
-        var close = document.getElementById("_cqupt-discuss-close");
-        discuss.onclick = function(){
+        var discuss_btn = document.querySelector("#_cqupt-discuss"),
+            donate_btn = document.querySelector("#_cqupt-donate-btn"),
+            info_btn = document.querySelector("#_cqupt-info-btn"),
+            duosuo = document.querySelector("#_cqupt-duosuo"),
+            donate = document.querySelector("#_cqupt-donate"),
+            info = document.querySelector("#_cqupt-info"),
+            side = document.querySelector("#_cqupt-side-box"),
+            close = document.querySelector("#_cqupt-discuss-close");
+        discuss_btn.onclick = function(){
             var el = document.createElement('div');
             el.setAttribute('data-thread-key', '1');
             el.setAttribute('data-title', '内网外入');
             el.setAttribute('data-url', 'https://cqupt.congm.in');
             DUOSHUO.EmbedThread(el);
-            var duosuo = document.getElementById("_cqupt-duosuo");
-            duosuo.replaceChild(el, duosuo.lastChild);
-            discuss.className = "active";
-            side.className = "active";
+            var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
+            duosuo_content.replaceChild(el, duosuo_content.lastChild);
+            discuss_btn.classList.add('active');
+            donate_btn.classList.remove('active');
+            info_btn.classList.remove('active');
+            side.classList.add('active');
+            duosuo.classList.remove('_cqupt-hidden');
+            donate.classList.add('_cqupt-hidden');
+            info.classList.add('_cqupt-hidden');
+        };
+        donate_btn.onclick = function(){
+            discuss_btn.classList.remove('active');
+            donate_btn.classList.add('active');
+            info_btn.classList.remove('active');
+            side.classList.add('active');
+            duosuo.classList.add('_cqupt-hidden');
+            donate.classList.remove('_cqupt-hidden');
+            info.classList.add('_cqupt-hidden');
+        };
+        info_btn.onclick = function(){
+            discuss_btn.classList.remove('active');
+            donate_btn.classList.remove('active');
+            info_btn.classList.add('active');
+            side.classList.add('active');
+            duosuo.classList.add('_cqupt-hidden');
+            donate.classList.add('_cqupt-hidden');
+            info.classList.remove('_cqupt-hidden');
         };
         close.onclick = function(){
-            discuss.className = "";
-            side.className = "";
+            discuss_btn.classList.remove('active');
+            donate_btn.classList.remove('active');
+            info_btn.classList.remove('active');
+            side.classList.remove('active');
+            duosuo.classList.add('_cqupt-hidden');
+            donate.classList.add('_cqupt-hidden');
+            info.classList.add('_cqupt-hidden');
         };
-        //升起动画控制
-        var iUp = (function() {
-            var t = 0,
-                up = function(e) {
-                    setTimeout(function() {
-                        e.className += " up";
-                    }, t);
-                    t += 200;
-                };
-            return {
-                up: up
-            }
-        })();
-        var iUps = document.querySelectorAll(".iUp");
-        for(var i = 0, length = iUps.length; i < length; i++){
-            iUp.up(iUps[i]);
-        }
     };
 })();
 
