@@ -603,31 +603,44 @@ input[value]{
 		left: 0.2em;
 	}
 	#warn{
-		width: auto;
-		left: 8em;
-		right: 3.6em;
-        margin-top: 0;
-		margin-left: 0;
-        height: 25px;
-        line-height: 25px;
-        padding: 0 6px;
-		border-radius: 3px;
-		-moz-border-radius: 3px;
-		-webkit-border-radius: 3px;
-		background-color: rgba(211,211,211,0.25);
-		box-shadow: none;
-		-ms-transform:translate(0,0);	/* IE 9 */
-		-moz-transform:translate(0,0);	/* Firefox */
-		-webkit-transform:translate(0,0);  /* Safari 和 Chrome */
-		-o-transform:translate(0,0); 	/* Opera */
+		display: none;
 	}
-	.side-box{
+	#side-box{
 		width: 100%;
 		right: -100%;
 		background-color: rgba(255, 255, 255, 0.95);
 	}
-	.side-box.active{
+	#side-box.active{
 		right: 0;
+	}
+	#side-box .side-bar{
+		width: 30px;
+		left: -30px;
+		background-color: transparent;
+	}
+	#side-box .side-bar .side-bar-item{
+		width: 22px;
+		font-size: 14px;
+		padding: 4px;
+		line-height: 18px;
+	}
+	#side-box .side-bar .side-bar-item:hover{
+		background-color: transparent;
+		color: #fff;
+	}
+	#side-box .side-bar .side-bar-item:hover a{
+		color: #fff;
+	}
+	#side-box .side-bar .side-bar-item span{
+		height: 28px;
+		font-size: 18px;
+		line-height: 24px;
+	}
+	#side-box .side-bar .side-bar-item#title{
+		display: none;
+	}
+	#side-box .side-bar .side-bar-bottom{
+		bottom: 5px;
 	}
 	.discuss-close{
 		margin-top: 0.5em;
