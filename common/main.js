@@ -97,7 +97,7 @@ var _hmt = _hmt || [];
                                 '<h2>捐助列表</h2>' +
                                 '<table class="_cqupt-donate-list">' +
                                     '<thead><tr>' +
-                                        '<th>账户</th><th>用户名</th><th>捐助时间</th><th>捐助金额</th>' +
+                                        '<th>账户</th><th>用户名</th><th>时间</th><th>捐助金额</th>' +
                                     '</tr></thead>' +
                                 '</table>' +
                             '</div>' +
@@ -184,7 +184,8 @@ var _hmt = _hmt || [];
                 var html = '<tbody>';
                 for(var i = 0; i < data.length; i++){
                     html += '<tr>';
-                    html += '<td>' + data[i].user +'</td>';
+                    html += '<td>' + data[i].user_id +'</td>';
+                    html += '<td>' + data[i].user_name +'</td>';
                     html += '<td>' + data[i].time +'</td>';
                     html += '<td>' + data[i].money +'</td>';
                     html += '</tr>';
