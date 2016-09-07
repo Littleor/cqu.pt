@@ -246,6 +246,14 @@ body{
     padding: 0;
     border: 0;
 }
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-donate-list{
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    font-size: 12px;
+    color: #7F8C8D;
+}
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-info-list{
     margin-top: 10px;
     border-left: 3px solid #ddd;
