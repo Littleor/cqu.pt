@@ -74,8 +74,7 @@ body{
     list-style: none;
     background-color: #42b983;
     color: #fff;
-    box-shadow: -3px 0 5px #d8d8d8;
-    user-select:none;
+    user-select: none;
 }
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-bottom{
     position: absolute;
