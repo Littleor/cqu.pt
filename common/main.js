@@ -90,7 +90,7 @@ var _hmt = _hmt || [];
                         '<div class="_cqupt-content-item _cqupt-hidden" id="_cqupt-donate">' +
                             '<div class="_cqupt-content-hd">捐助</div>' +
                             '<div class="_cqupt-content-bd">' +
-                                '<h3><span class="_cqupt-label _cqupt-label-o">内网外入</span> (cqupt.congm.in) 是一个免费的系统，但是内网外入服务器需要网络和维护的成本。</p>' +
+                                '<h3><span class="_cqupt-label _cqupt-label-o">内网外入</span> (cqupt.congm.in) 是一个免费的系统，但是内网外入服务器需要网络和维护的成本。</h3>' +
                                 '<p>如果您觉得内网外入极大方便您的日常使用，您可以自愿选择通过捐赠来促进内网外入的健康维护和发展，内网外入也需要大家的点滴支持。</p>' +
                                 '<p class="_cqupt-small">支付宝帐号：i@congm.in / 这是昵称 (闵聪)</p>' +
                                 '<img src="//cqupt.congm.in/img/alipay.png" class="_cqupt-donate-img">' +
@@ -109,12 +109,12 @@ var _hmt = _hmt || [];
                                 '<h3><span class="_cqupt-label _cqupt-label-sm">个人项目</span> <span class="_cqupt-label _cqupt-label-sm">非官方项目</span></h3>' +
                                 '<p>内网外入诞生于2015年9月，该系统利用nginx服务器反向代理的原理，解决了同学通过外网无法访问内网的问题。该系统在保证内网安全的前提下，可以随时随地进入内网查询自己的个人课表、考试安排、期末成绩，进行选课等，极大方便同学们的日常使用。网页上线一年来PV总访问量超过85万多次，PV单日峰值达5万多次，UV独立访客日均约1000人，UV峰值约10000人。</p>' +
                                 '<div class="_cqupt-info-list">' +
-                                    '<p>官网：<a href="//cqupt.congm.in" target="_blank">cqupt.congm.in</a></h3>' +
-                                    '<p>Github：<a href="https://github.com/mcc108/cqupt.congm.in" target="_blank">github.com/mcc108/cqupt.congm.in</a></h3>' +
-                                    '<p>交流群：<a href="http://jq.qq.com/?_wv=1027&k=2CKYKx6" target="_blank">312784909</a></h3>' +
-                                    '<p>博文：<a href="//i.congm.in/cqupt-inner" target="_blank">i.congm.in/cqupt-inner</a></h3>' +
-                                    '<p>统计：<a href="http://new.cnzz.com/v1/login.php?siteid=1257517721" target="_blank">CNZZ</a></h3>' +
-                                    '<p>作者：<a href="//congm.in" target="_blank">@ Cong Min</a></h3>' +
+                                    '<p>官网：<a href="//cqupt.congm.in" target="_blank">cqupt.congm.in</a></p>' +
+                                    '<p>Github：<a href="https://github.com/mcc108/cqupt.congm.in" target="_blank">github.com/mcc108/cqupt.congm.in</a></p>' +
+                                    '<p>交流群：<a href="http://jq.qq.com/?_wv=1027&k=2CKYKx6" target="_blank">312784909</a></p>' +
+                                    '<p>博文：<a href="//i.congm.in/cqupt-inner" target="_blank">i.congm.in/cqupt-inner</a></p>' +
+                                    '<p>统计：<a href="http://new.cnzz.com/v1/login.php?siteid=1257517721" target="_blank">CNZZ</a></p>' +
+                                    '<p>作者：<a href="//congm.in" target="_blank">@ Cong Min</a></p>' +
                                 '</div>' +
                             '</div>' +
                         '</div>' +
@@ -139,7 +139,7 @@ var _hmt = _hmt || [];
             el.setAttribute('data-url', 'https://cqupt.congm.in');
             DUOSHUO.EmbedThread(el);
             var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
-            duosuo_content.replaceChild(el, duosuo_content.lastChild);
+            duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
             discuss_btn.classList.add('active');
             donate_btn.classList.remove('active');
             info_btn.classList.remove('active');
@@ -192,13 +192,7 @@ var _hmt = _hmt || [];
                 }
                 html += '</tbody>';
                 document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
-            } else {
-                // We reached our target server, but it returned an error
-
             }
-        };
-        request.onerror = function() {
-            // There was a connection error of some sort
         };
         request.send();
     };

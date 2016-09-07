@@ -238,20 +238,77 @@ $(function() {
         setTimeout(show_about, 10000);
     }
     //side-box
-    $("#discuss").click(function(){
+    var discuss_btn = document.querySelector("#discuss"),
+        donate_btn = document.querySelector("#donate-btn"),
+        info_btn = document.querySelector("#info-btn"),
+        duosuo = document.querySelector("#duosuo"),
+        donate = document.querySelector("#donate"),
+        info = document.querySelector("#info"),
+        side = document.querySelector("#side-box"),
+        close = document.querySelector("#discuss-close");
+    discuss_btn.onclick = function(){
         var el = document.createElement('div');
         el.setAttribute('data-thread-key', '1');
         el.setAttribute('data-title', '内网外入');
         el.setAttribute('data-url', 'https://cqupt.congm.in');
         DUOSHUO.EmbedThread(el);
-        $(".duosuo").children().last().replaceWith(el);
-        $(this).addClass("active");
-        $(".side-box").addClass("active");
-    });
-    $(".discuss-close").click(function(){
-        $("#discuss").removeClass("active");
-        $(".side-box").removeClass("active");
-    });
+        var duosuo_content = duosuo.querySelector(".content-bd");
+        duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
+        discuss_btn.classList.add('active');
+        donate_btn.classList.remove('active');
+        info_btn.classList.remove('active');
+        side.classList.add('active');
+        duosuo.classList.remove('hidden');
+        donate.classList.add('hidden');
+        info.classList.add('hidden');
+    };
+    donate_btn.onclick = function(){
+        discuss_btn.classList.remove('active');
+        donate_btn.classList.add('active');
+        info_btn.classList.remove('active');
+        side.classList.add('active');
+        duosuo.classList.add('hidden');
+        donate.classList.remove('hidden');
+        info.classList.add('hidden');
+    };
+    info_btn.onclick = function(){
+        discuss_btn.classList.remove('active');
+        donate_btn.classList.remove('active');
+        info_btn.classList.add('active');
+        side.classList.add('active');
+        duosuo.classList.add('hidden');
+        donate.classList.add('hidden');
+        info.classList.remove('hidden');
+    };
+    close.onclick = function(){
+        discuss_btn.classList.remove('active');
+        donate_btn.classList.remove('active');
+        info_btn.classList.remove('active');
+        side.classList.remove('active');
+        duosuo.classList.add('hidden');
+        donate.classList.add('hidden');
+        info.classList.add('hidden');
+    };
+    // ajax - donate.json
+    var request = new XMLHttpRequest();
+    request.open('GET', '//cqupt.congm.in/common/donate.json', true);
+    request.onload = function() {
+        if (this.status >= 200 && this.status < 400) {
+            var data = JSON.parse(this.response);
+            var html = '<tbody>';
+            for(var i = 0; i < data.length; i++){
+                html += '<tr>';
+                html += '<td>' + data[i].user_id +'</td>';
+                html += '<td>' + data[i].user_name +'</td>';
+                html += '<td>' + data[i].time +'</td>';
+                html += '<td>' + data[i].money +'</td>';
+                html += '</tr>';
+            }
+            html += '</tbody>';
+            document.querySelector(".donate-list").insertAdjacentHTML("afterbegin", html);
+        }
+    };
+    request.send();
     //console.log();
     (function consoleSomething() {
         if (/webkit/.test(navigator.userAgent.toLowerCase())) {
