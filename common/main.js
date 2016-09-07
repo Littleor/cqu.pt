@@ -91,13 +91,13 @@ var _hmt = _hmt || [];
                             '<div class="_cqupt-content-hd">捐助</div>' +
                             '<div class="_cqupt-content-bd">' +
                                 '<h3><span class="_cqupt-label _cqupt-label-o">内网外入</span> (cqupt.congm.in) 是一个免费的系统，但是内网外入服务器需要网络和维护的成本。</p>' +
-                                '<p>如果您觉得内网外入极大方便您的日常使用，您可以自愿选择通过捐赠来促进内网外入的健康维护和发展，内网外入也需要大家的点滴支持。(捐赠时请附上备注内网外入)</p>' +
+                                '<p>如果您觉得内网外入极大方便您的日常使用，您可以自愿选择通过捐赠来促进内网外入的健康维护和发展，内网外入也需要大家的点滴支持。</p>' +
                                 '<p class="_cqupt-small">支付宝帐号：i@congm.in / 这是昵称 (闵聪)</p>' +
                                 '<img src="//cqupt.congm.in/img/alipay.png" class="_cqupt-donate-img">' +
                                 '<h2>捐助列表</h2>' +
                                 '<table class="_cqupt-donate-list">' +
                                     '<thead><tr>' +
-                                        '<th>用户名</th><th>捐助时间</th><th>捐助金额</th>' +
+                                        '<th>账户</th><th>用户名</th><th>捐助时间</th><th>捐助金额</th>' +
                                     '</tr></thead>' +
                                 '</table>' +
                             '</div>' +
