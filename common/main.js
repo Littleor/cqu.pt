@@ -101,7 +101,7 @@ var _hmt = _hmt || [];
                             '<div class="_cqupt-content-bd">' +
                                 '<h2>内网外入 (cqupt.congm.in) </h2>' +
                                 '<h3><span class="_cqupt-label _cqupt-label-sm">个人项目</span> <span class="_cqupt-label _cqupt-label-sm">非官方项目</span></h3>' +
-                                '<p>该系统利用nginx服务器反向代理，解决了同学通过外网无法访问内网的问题。该系统在保证内网安全的前提下，可以随时随地进入内网查询自己的个人课表、考试安排、期末成绩，进行选课等，极大方便同学们的日常使用。 网页上线十个月来PV总访问量超过65万多次，PV单日峰值达5万多次，UV日均访客约1000人，UV访客峰值约10000人。</p>' +
+                                '<p>内网外入诞生于2015年9月，该系统利用nginx服务器反向代理的原理，解决了同学通过外网无法访问内网的问题。该系统在保证内网安全的前提下，可以随时随地进入内网查询自己的个人课表、考试安排、期末成绩，进行选课等，极大方便同学们的日常使用。网页上线十个月来PV总访问量超过65万多次，PV单日峰值达5万多次，UV日均访客约1000人，UV访客峰值约10000人。</p>' +
                                 '<div class="_cqupt-info-list">' +
                                     '<p>官网：<a href="//cqupt.congm.in" target="_blank">cqupt.congm.in</a></h3>' +
                                     '<p>Github：<a href="https://github.com/mcc108/cqupt.congm.in" target="_blank">github.com/mcc108/cqupt.congm.in</a></h3>' +

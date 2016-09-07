@@ -20,7 +20,7 @@ body{
     color: #42b983;
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px;
+    line-height: 20px;
     text-align: center;
 }
 ._cqupt-label-o{
@@ -31,7 +31,7 @@ body{
 ._cqupt-label-sm{
     padding: 0 4px;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 18px;
 }
 ._cqupt-iconfont{
     font-family: "iconfont" !important;
