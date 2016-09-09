@@ -34,7 +34,7 @@ var _hmt = _hmt || [];
         var a = '<div id="_cqupt-side-box">' +
                     '<div class="_cqupt-side-bar">' +
                         '<div class="_cqupt-side-bar-item" id="_cqupt-title">' +
-                            '<a href="//cqupt.congm.in" target="_blank">内网外入</a>' +
+                            '<a href="javascript:void(0);">内网外入</a>' +
                         '</div>' +
                         '<div class="_cqupt-side-bar-top">' +
                             '<div class="_cqupt-side-bar-item">' +
@@ -124,7 +124,8 @@ var _hmt = _hmt || [];
             document.body.insertAdjacentHTML("afterbegin", a);
         }
         /* side-box */
-        var discuss_btn = document.querySelector("#_cqupt-discuss"),
+        var title_btn = document.querySelector("#_cqupt-title"),
+            discuss_btn = document.querySelector("#_cqupt-discuss"),
             donate_btn = document.querySelector("#_cqupt-donate-btn"),
             info_btn = document.querySelector("#_cqupt-info-btn"),
             duosuo = document.querySelector("#_cqupt-duosuo"),
@@ -132,6 +133,10 @@ var _hmt = _hmt || [];
             info = document.querySelector("#_cqupt-info"),
             side = document.querySelector("#_cqupt-side-box"),
             close = document.querySelector("#_cqupt-discuss-close");
+        title_btn.onclick = function(){
+            side.classList.toggle('_cqupt-close');
+            side.classList.remove('_cqupt-active');
+        };
         discuss_btn.onclick = function(){
             var el = document.createElement('div');
             el.setAttribute('data-thread-key', '1');
@@ -140,37 +145,37 @@ var _hmt = _hmt || [];
             DUOSHUO.EmbedThread(el);
             var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
             duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
-            discuss_btn.classList.add('active');
-            donate_btn.classList.remove('active');
-            info_btn.classList.remove('active');
-            side.classList.add('active');
+            discuss_btn.classList.add('_cqupt-active');
+            donate_btn.classList.remove('_cqupt-active');
+            info_btn.classList.remove('_cqupt-active');
+            side.classList.add('_cqupt-active');
             duosuo.classList.remove('_cqupt-hidden');
             donate.classList.add('_cqupt-hidden');
             info.classList.add('_cqupt-hidden');
         };
         donate_btn.onclick = function(){
-            discuss_btn.classList.remove('active');
-            donate_btn.classList.add('active');
-            info_btn.classList.remove('active');
-            side.classList.add('active');
+            discuss_btn.classList.remove('_cqupt-active');
+            donate_btn.classList.add('_cqupt-active');
+            info_btn.classList.remove('_cqupt-active');
+            side.classList.add('_cqupt-active');
             duosuo.classList.add('_cqupt-hidden');
             donate.classList.remove('_cqupt-hidden');
             info.classList.add('_cqupt-hidden');
         };
         info_btn.onclick = function(){
-            discuss_btn.classList.remove('active');
-            donate_btn.classList.remove('active');
-            info_btn.classList.add('active');
-            side.classList.add('active');
+            discuss_btn.classList.remove('_cqupt-active');
+            donate_btn.classList.remove('_cqupt-active');
+            info_btn.classList.add('_cqupt-active');
+            side.classList.add('_cqupt-active');
             duosuo.classList.add('_cqupt-hidden');
             donate.classList.add('_cqupt-hidden');
             info.classList.remove('_cqupt-hidden');
         };
         close.onclick = function(){
-            discuss_btn.classList.remove('active');
-            donate_btn.classList.remove('active');
-            info_btn.classList.remove('active');
-            side.classList.remove('active');
+            discuss_btn.classList.remove('_cqupt-active');
+            donate_btn.classList.remove('_cqupt-active');
+            info_btn.classList.remove('_cqupt-active');
+            side.classList.remove('_cqupt-active');
             duosuo.classList.add('_cqupt-hidden');
             donate.classList.add('_cqupt-hidden');
             info.classList.add('_cqupt-hidden');
