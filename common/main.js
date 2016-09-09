@@ -136,7 +136,7 @@ var _hmt = _hmt || [];
         title_btn.onclick = function(){
             side.classList.remove('_cqupt-active');
             side.classList.add('_cqupt-close');
-            document.body.style.paddingRight = 0;
+            document.body.style.paddingRight = "0 !important";
         };
         discuss_btn.onclick = function(){
             var el = document.createElement('div');
