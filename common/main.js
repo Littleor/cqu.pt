@@ -25,7 +25,7 @@ var _hmt = _hmt || [];
     /* 插入css */
     var css = document.createElement("link");
     css.rel = "stylesheet";
-    css.href = "//cqupt.congm.in/common/main.css";
+    css.href = "//cqupt.congm.in/common/main.css?" + new Date().getTime();
     if(self == top){
         document.head.appendChild(css);
     }
