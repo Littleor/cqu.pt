@@ -291,7 +291,7 @@ $(function() {
     };
     // ajax - donate.json
     var request = new XMLHttpRequest();
-    request.open('GET', '//cqupt.congm.in/common/donate.json', true);
+    request.open('GET', 'https://cqupt.congm.in/common/donate.json', true);
     request.onload = function() {
         if (this.status >= 200 && this.status < 400) {
             var data = JSON.parse(this.response);
