@@ -122,6 +122,7 @@ var _hmt = _hmt || [];
                 '</div>';
         if(self == top){
             document.body.insertAdjacentHTML("afterbegin", a);
+            document.body.classList.add('_cqupt-body');
         }
         /* side-box */
         var title_btn = document.querySelector("#_cqupt-title"),
@@ -134,9 +135,9 @@ var _hmt = _hmt || [];
             side = document.querySelector("#_cqupt-side-box"),
             close = document.querySelector("#_cqupt-discuss-close");
         title_btn.onclick = function(){
+            document.body.classList.remove('_cqupt-body');
             side.classList.remove('_cqupt-active');
             side.classList.add('_cqupt-close');
-            document.body.style.paddingRight = "0 !important";
         };
         discuss_btn.onclick = function(){
             var el = document.createElement('div');

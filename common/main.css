@@ -6,7 +6,7 @@
     url('//cqupt.congm.in/img/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
     url('//cqupt.congm.in/img/font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
-body{
+body._cqupt-body{
     padding-right: 45px !important;
 }
 ._cqupt-hidden{
