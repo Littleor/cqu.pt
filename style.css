@@ -492,7 +492,7 @@ input[value]{
 	text-decoration: none;
 	outline: none;
 }
-#side-box .content .content-bd p.small{
+#side-box .content .content-bd .small{
 	font-size: 12px;
 	line-height: 1.5;
 	text-indent: 0;

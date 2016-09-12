@@ -1,4 +1,14 @@
 [{
+  "user_id": "734***@qq.com",
+  "user_name": "JohnZhu1997",
+  "time": "2016-09-11",
+  "money": 5
+},{
+  "user_id": "188***1305",
+  "user_name": "权奥",
+  "time": "2016-09-11",
+  "money": 5
+},{
   "user_id": "156***4460",
   "user_name": "Hypernova",
   "time": "2016-09-09",
@@ -9,7 +19,7 @@
   "time": "2016-09-08",
   "money": 10
 },{
-  "user_id": "181****6814",
+  "user_id": "181***6814",
   "user_name": "文慧",
   "time": "2016-09-07",
   "money": 1
