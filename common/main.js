@@ -94,7 +94,7 @@ var _hmt = _hmt || [];
                                 '<p>如果您觉得内网外入极大方便您的日常使用，您可以自愿选择通过捐赠来促进内网外入的健康维护和发展，内网外入也需要大家的点滴支持。</p>' +
                                 '<p class="_cqupt-small">支付宝帐号：i@congm.in / 这是昵称 (闵聪)</p>' +
                                 '<img src="//cqupt.congm.in/img/alipay.png" class="_cqupt-donate-img">' +
-                                '<h2>捐助人列表 <small class="_cqupt-small">(每天一更新)</small></h2>' +
+                                '<h2>捐助人列表 <small class="_cqupt-small">(每日更新)</small></h2>' +
                                 '<table class="_cqupt-donate-list">' +
                                     '<thead><tr>' +
                                         '<th>账户</th><th>用户名</th><th>时间</th><th>金额</th>' +
