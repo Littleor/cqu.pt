@@ -34,7 +34,7 @@ var _hmt = _hmt || [];
         var a = '<div id="_cqupt-side-box">' +
                     '<div class="_cqupt-side-bar">' +
                         '<div class="_cqupt-side-bar-item" id="_cqupt-title">' +
-                            '<a href="javascript:void(0);">内网外入</a>' +
+                            '<a href="javascript:void(0);"><i>×</i> 内网外入</a>' +
                         '</div>' +
                         '<div class="_cqupt-side-bar-top">' +
                             '<div class="_cqupt-side-bar-item">' +
