@@ -107,13 +107,13 @@ var _hmt = _hmt || [];
                             '<div class="_cqupt-content-bd">' +
                                 '<h2>内网外入 (cqupt.congm.in) </h2>' +
                                 '<h3><span class="_cqupt-label _cqupt-label-sm">个人项目</span> <span class="_cqupt-label _cqupt-label-sm">非官方项目</span></h3>' +
-                                '<p>内网外入诞生于2015年9月，该系统利用nginx服务器反向代理的原理，解决了同学通过外网无法访问内网的问题。该系统在保证内网安全的前提下，可以随时随地进入内网查询自己的个人课表、考试安排、期末成绩，进行选课等，极大方便同学们的日常使用。网页上线一年来PV总访问量超过85万多次，PV单日峰值达5万多次，UV独立访客日均约1000人，UV峰值约10000人。</p>' +
+                                '<p>内网外入诞生于2015年9月，该系统利用nginx服务器反向代理的原理，解决了同学通过外网无法访问内网的问题。该系统在保证内网安全的前提下，可以随时随地进入内网查询自己的个人课表、考试安排、期末成绩，进行选课等，极大方便同学们的日常使用。网页上线一年PV总访问量超过100万多次，PV单日峰值达5万多次，UV独立访客日均约1200人，UV日峰值超1万人。</p>' +
                                 '<div class="_cqupt-info-list">' +
                                     '<p>官网：<a href="//cqupt.congm.in" target="_blank">cqupt.congm.in</a></p>' +
                                     '<p>Github：<a href="https://github.com/mcc108/cqupt.congm.in" target="_blank">github.com/mcc108/cqupt.congm.in</a></p>' +
                                     '<p>交流群：<a href="http://jq.qq.com/?_wv=1027&k=2CKYKx6" target="_blank">312784909</a></p>' +
                                     '<p>博文：<a href="//i.congm.in/cqupt-inner" target="_blank">i.congm.in/cqupt-inner</a></p>' +
-                                    '<p>统计：<a href="http://new.cnzz.com/v1/login.php?siteid=1257517721" target="_blank">CNZZ</a></p>' +
+                                    '<p>统计：<a href="http://new.cnzz.com/v1/login.php?siteid=1257517721" target="_blank">CNZZ统计</a></p>' +
                                     '<p>作者：<a href="//congm.in" target="_blank">@ Cong Min</a></p>' +
                                 '</div>' +
                             '</div>' +
