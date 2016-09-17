@@ -1,6 +1,7 @@
 /* 插入于内网页面中
  * cqupt.congm.in
  * */
+require('./main.css');
 
 /* 插入js */
 /* 百度统计 */
