@@ -11,7 +11,8 @@ module.exports = {
         // 输入
         app: ['./src/js/app'],
         // 第三方库modules单独打包, 填入modules名即可
-        lib: ['./src/js/jquery.min', './src/js/duosuo_embed.min', './src/js/tagcloud.min'],
+        lib: ['./src/js/jquery.min', './src/js/tagcloud.min'],
+        'duosuo_embed.min': ['./src/js/duosuo_embed.min'],
         '../common/main': ['./src/common/main']
     },
     output: {
