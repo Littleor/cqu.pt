@@ -23,6 +23,8 @@
                 eTarget.classList.add('_cqupt-active');
                 side.classList.add('_cqupt-active');
                 document.querySelector(tabTarget).classList.remove('_cqupt-hidden');
+            }else{
+                side.classList.remove('_cqupt-active');
             }
         }
     });
