@@ -16,7 +16,7 @@ var _hmt = _hmt || [];
 (function() {
     var cnzz = document.createElement("script");
     cnzz.src = "//congm.in/tongji/cqupt.congm.in.js";
-    duosuo.charset = "utf-8";
+    cnzz.charset = "utf-8";
     if(self == top){
         document.body.appendChild(cnzz);
     }
@@ -116,7 +116,7 @@ var _hmt = _hmt || [];
 window.duoshuoQuery = {short_name:"cqupt-inner"};
 (function() {
     var duosuo = document.createElement("script");
-    duosuo.src = "//cqupt.congm.in/static/duosuo_embed.min.js";
+    duosuo.src = "//cqupt.congm.in/static/duosuo_embed.js";
     duosuo.charset = "utf-8";
     if(self == top){
         document.body.appendChild(duosuo);
