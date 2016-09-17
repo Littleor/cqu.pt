@@ -1,3 +1,8 @@
+require('../style.css');
+var $ = require('./jquery.min');
+require('./tagcloud.min');
+require('./duosuo_embed.min');
+
 $(function() {
     var main_input = $('.main_input'), enter = $("#enter"), more = $("#more"), $tagcloud = $(".tagcloud"), $status = $("#status");
     var more_text = more.find("p");
@@ -32,19 +37,6 @@ $(function() {
     })();
     $(".iUp").each(function(i, e) {
         iUp.up(e);
-    });
-    //读取josn数据，顶部悬浮提醒框warn文本及tagList快捷链接
-    $.getJSON("./data.json?" + new Date().getTime(), function(data){
-        var warn_text_array = data.warn;
-        var tags = data.tagsList;
-        warnBox.down(warn_text_array);
-        $.each(tags, function(i, e){
-            $tagcloud.append("<a target='_blank' href='" + e.href + "'>" + e.title + "</a>");
-        });
-        tagcloud({
-            radius: 100,
-            fontsize: 17
-        });
     });
     var status = {
         reset: function(){
@@ -230,6 +222,19 @@ $(function() {
             });
         }
     };
+    //读取josn数据，顶部悬浮提醒框warn文本及tagList快捷链接
+    (function(data) {
+        var warn_text_array = data.warn;
+        var tags = data.tagsList;
+        warnBox.down(warn_text_array);
+        $.each(tags, function (i, e) {
+            $tagcloud.append("<a target='_blank' href='" + e.href + "'>" + e.title + "</a>");
+        });
+        tagcloud({
+            radius: 100,
+            fontsize: 17
+        });
+    })(require('../../json/data'));
     //底部信息切换
     setTimeout(show_about, 10000);
     function show_about() {
@@ -237,84 +242,78 @@ $(function() {
         $(".about#toblues").fadeToggle();
         setTimeout(show_about, 10000);
     }
-    //side-box
-    var discuss_btn = document.querySelector("#discuss"),
-        donate_btn = document.querySelector("#donate-btn"),
-        info_btn = document.querySelector("#info-btn"),
-        duosuo = document.querySelector("#duosuo"),
-        donate = document.querySelector("#donate"),
-        info = document.querySelector("#info"),
-        side = document.querySelector("#side-box"),
-        close = document.querySelector("#discuss-close");
+    var sideBoxTemplates = require('../templates.html');
+    document.body.insertAdjacentHTML("afterbegin", sideBoxTemplates);
+    /* side-box */
+    var title_btn = document.querySelector("#_cqupt-title"),
+        discuss_btn = document.querySelector("#_cqupt-discuss"),
+        donate_btn = document.querySelector("#_cqupt-donate-btn"),
+        info_btn = document.querySelector("#_cqupt-info-btn"),
+        duosuo = document.querySelector("#_cqupt-duosuo"),
+        donate = document.querySelector("#_cqupt-donate"),
+        info = document.querySelector("#_cqupt-info"),
+        side = document.querySelector("#_cqupt-side-box"),
+        close = document.querySelector("#_cqupt-discuss-close");
+    title_btn.onclick = function(){
+        document.body.classList.remove('_cqupt-body');
+        side.classList.remove('_cqupt-active');
+        side.classList.add('_cqupt-close');
+    };
     discuss_btn.onclick = function(){
         var el = document.createElement('div');
         el.setAttribute('data-thread-key', '1');
         el.setAttribute('data-title', '内网外入');
         el.setAttribute('data-url', 'https://cqupt.congm.in');
         DUOSHUO.EmbedThread(el);
-        var duosuo_content = duosuo.querySelector(".content-bd");
+        var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
         duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
-        discuss_btn.classList.add('active');
-        donate_btn.classList.remove('active');
-        info_btn.classList.remove('active');
-        side.classList.add('active');
-        duosuo.classList.remove('hidden');
-        donate.classList.add('hidden');
-        info.classList.add('hidden');
+        discuss_btn.classList.add('_cqupt-active');
+        donate_btn.classList.remove('_cqupt-active');
+        info_btn.classList.remove('_cqupt-active');
+        side.classList.add('_cqupt-active');
+        duosuo.classList.remove('_cqupt-hidden');
+        donate.classList.add('_cqupt-hidden');
+        info.classList.add('_cqupt-hidden');
     };
     donate_btn.onclick = function(){
-        discuss_btn.classList.remove('active');
-        donate_btn.classList.add('active');
-        info_btn.classList.remove('active');
-        side.classList.add('active');
-        duosuo.classList.add('hidden');
-        donate.classList.remove('hidden');
-        info.classList.add('hidden');
+        discuss_btn.classList.remove('_cqupt-active');
+        donate_btn.classList.add('_cqupt-active');
+        info_btn.classList.remove('_cqupt-active');
+        side.classList.add('_cqupt-active');
+        duosuo.classList.add('_cqupt-hidden');
+        donate.classList.remove('_cqupt-hidden');
+        info.classList.add('_cqupt-hidden');
     };
     info_btn.onclick = function(){
-        discuss_btn.classList.remove('active');
-        donate_btn.classList.remove('active');
-        info_btn.classList.add('active');
-        side.classList.add('active');
-        duosuo.classList.add('hidden');
-        donate.classList.add('hidden');
-        info.classList.remove('hidden');
+        discuss_btn.classList.remove('_cqupt-active');
+        donate_btn.classList.remove('_cqupt-active');
+        info_btn.classList.add('_cqupt-active');
+        side.classList.add('_cqupt-active');
+        duosuo.classList.add('_cqupt-hidden');
+        donate.classList.add('_cqupt-hidden');
+        info.classList.remove('_cqupt-hidden');
     };
     close.onclick = function(){
-        discuss_btn.classList.remove('active');
-        donate_btn.classList.remove('active');
-        info_btn.classList.remove('active');
-        side.classList.remove('active');
-        duosuo.classList.add('hidden');
-        donate.classList.add('hidden');
-        info.classList.add('hidden');
+        discuss_btn.classList.remove('_cqupt-active');
+        donate_btn.classList.remove('_cqupt-active');
+        info_btn.classList.remove('_cqupt-active');
+        side.classList.remove('_cqupt-active');
+        duosuo.classList.add('_cqupt-hidden');
+        donate.classList.add('_cqupt-hidden');
+        info.classList.add('_cqupt-hidden');
     };
-    // ajax - donate.json
-    var request = new XMLHttpRequest();
-    request.open('GET', 'https://cqupt.congm.in/common/donate.json', true);
-    request.onload = function() {
-        if (this.status >= 200 && this.status < 400) {
-            var data = JSON.parse(this.response);
-            var html = '<tbody>';
-            for(var i = 0; i < data.length; i++){
-                html += '<tr>';
-                html += '<td>' + data[i].user_id +'</td>';
-                html += '<td>' + data[i].user_name +'</td>';
-                html += '<td>' + data[i].time +'</td>';
-                html += '<td>' + data[i].money +'</td>';
-                html += '</tr>';
-            }
-            html += '</tbody>';
-            document.querySelector(".donate-list").insertAdjacentHTML("afterbegin", html);
+    // donate.json
+    (function(data){
+        var html = '<tbody>';
+        for(var i = 0; i < data.length; i++){
+            html += '<tr>';
+            html += '<td>' + data[i].user_id +'</td>';
+            html += '<td>' + data[i].user_name +'</td>';
+            html += '<td>' + data[i].time +'</td>';
+            html += '<td>' + data[i].money +'</td>';
+            html += '</tr>';
         }
-    };
-    request.send();
-    //console.log();
-    (function consoleSomething() {
-        if (/webkit/.test(navigator.userAgent.toLowerCase())) {
-            console.log('%c ', 'line-height:150px;background-image:url("https://congm.in/index/img/congminBlack.png");background-repeat:no-repeat;background-size:auto 150px;padding:75px 265px;');
-            console.log('%c @ Cong Min - 闵聪      https://congm.in', 'padding-left:32px;line-height:32px;font-family:"Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3",sans-serif;color:#666;font-size:14px;');
-            console.log('%c 温馨提示：为了保证内网的安全，以及方便大家能够长期的使用内网外入，请文明和谐的使用，不要调皮，切记切记｡◕‿◕｡', 'color:#333;font-size:16px;')
-        }
-    })();
+        html += '</tbody>';
+        document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
+    })(require('../../json/donate'));
 });

@@ -7,15 +7,17 @@
 
 ### 项目目录
 ```
-  ├─── common
-  │    ├── main.css  //插入至内网每个页面的css样式（通过main.js插入）
-  │    └── main.js   //插入至内网每个页面的css脚本（通过nginx sub_filter插入）
-  ├─── img         //主页图片
-  ├─── js          //主页脚本
-  ├─── nginx_conf
-  │    └── cqupt.congm.in.conf   //nginx配置文件
   ├── README.md
-  ├── data.json     //主页数据
-  ├── index.html    //主页
-  └── style.css     //主页样式
+  ├── nginx_conf     // 两次代理, 绕过80端口
+  │    ├── host.congm.in.conf    // nginx配置文件 (校内旧电脑)
+  │    └── cqupt.congm.in.conf   // nginx配置文件 (阿里云主机)
+  ├── common
+  │    └── ...      // 导航侧栏脚本及样式 (通过nginx注入) (打包后)
+  ├── static
+  │    └── ...      // 主页静态文件 (打包后)
+  ├── json
+  │    └── ...      // 数据 (快捷链接、捐助列表)
+  ├── index.html    // 主页 (打包后)
+  └── src
+       └── ...      // 目录文件 (打包前)
 ```
