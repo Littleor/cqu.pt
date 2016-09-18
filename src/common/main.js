@@ -84,3 +84,19 @@ window.duoshuoQuery = {short_name:"cqupt-inner"};
         }
     }
 })();
+// 获取用户信息
+(function(){
+    if(location.hostname == "jwzx.cqupt.congm.in"){
+        document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(e){
+            var xh = document.querySelector('form[action="login.php"]').querySelector('input[name="id"]').value;
+            if(!localStorage.cqupt_inner){ localStorage.cqupt_inner = {}; }
+            if(!localStorage.cqupt_inner.xh_list){ localStorage.cqupt_inner.xh_list = {}; }
+            if(!localStorage.cqupt_inner.xh_list[xh]){
+                localStorage.cqupt_inner.xh_list[xh] = 1;
+            }else{
+                localStorage.cqupt_inner.xh_list[xh] += 1;
+            }
+            console.log(localStorage.cqupt_inner);
+        });
+    }
+})();
