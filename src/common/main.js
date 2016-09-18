@@ -90,10 +90,10 @@ window.duoshuoQuery = {short_name:"cqupt-inner"};
         document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(){
             var xh = document.querySelector('form[action="login.php"]').querySelector('input[name="id"]').value;
             var cqupt_inner;
-            if(!localStorage.cqupt_inner || JSON.parse(localStorage.cqupt_inner).constructor != Object){
+            try{
+                cqupt_inner = JSON.parse(localStorage.cqupt_inner)
+            }catch(err){
                 cqupt_inner = {};
-            }else{
-                cqupt_inner = JSON.parse(localStorage.cqupt_inner);
             }
             if(!cqupt_inner.xh_list){ cqupt_inner.xh_list = {}; }
             if(!cqupt_inner.xh_list[xh]){
