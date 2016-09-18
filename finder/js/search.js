@@ -18,10 +18,11 @@ $(".logo").click(function(){
 });
 function search(key){
     $(".search-input").val(key);
-    htmls = '<tr class="info"><th>#</th><th>Ñ§ºÅ</th><th>ĞÕÃû</th><th>ĞÔ±ğ</th><th>×¨Òµ</th><th>Ñ§Ôº</th><th>Äê¼¶</th><th>°à¼¶</th></tr>';
+    htmls = '<tr class="info"><th>#</th><th>å­¦å·</th><th>å§“å</th><th>æ€§åˆ«</th><th>ä¸“ä¸š</th><th>å­¦é™¢</th><th>å¹´çº§</th><th>ç­çº§</th></tr>';
     $(".header").addClass("top");
     $(".info-box").slideUp("fast");
-    $(".list-table tbody").html('<div class="alert alert-warning my-alert">ÕıÔÚ²éÑ¯...</div>');
+    $(".list-table tbody").html('<div class="alert alert-warning my-alert">æ­£åœ¨æŸ¥è¯¢...</div>');
+    $(".list").show("fast");
     $.ajax({
         type: "GET",
         url: "https://blues.congm.in/stu.php?searchKey=" + key,
@@ -33,7 +34,6 @@ function search(key){
                     htmls += '<tr data-id="' + i + '"><td>' + (i + 1) + '</td><td>' + students[i].xh + '</td><td>' + students[i].xm + '</td><td>' + students[i].xb + '</td><td>' + students[i].zym + '</td><td>' + students[i].yxm + '</td><td>' + students[i].nj + '</td><td>' + students[i].bj + '</td></tr>';
                 }
                 $(".list-table tbody").html(htmls);
-                $(".list").show("fast");
             }
         }
     });
@@ -42,12 +42,12 @@ function search(key){
             var $id = $(".student-id"),
                 $img = $(".student-img"),
                 $tbody = $(".student-table tbody");
-            $id.html("¡¾ Ñ§ºÅ - ĞÕÃû ¡¿");
+            $id.html("ã€ å­¦å· - å§“å ã€‘");
             $img.attr("src", "");
             $tbody.html("");
             var student = students[$(this).data("id")],
-                html = '<tr><td>ĞÕÃû£º' + student.xm + '</td><td>ĞÔ±ğ£º' + student.xb + '</td></tr><tr><td>°à¼¶£º' + student.bj + '</td><td>×¨Òµ£º' + student.zym + '</td></tr><tr><td>Äê¼¶£º' + student.nj + '</td><td>Ñ§Ôº£º' + student.yxm + '</td></tr><tr><td><button class="btn btn-sm btn-success" href="#" onclick="search(\'' + student.bj + '\')">¸Ã°àÑ§ÉúÃûµ¥</button></td><td><a class="btn btn-sm btn-danger" href="https://jwzx.cqupt.congm.in/jwzxtmp/showKebiao.php?type=student&id=' + student.xh + '" target="_blank">¸öÈË¿Î±í</a></td></tr>';
-            $id.html("¡¾" + student.xh + " - " + student.xm + "¡¿");
+                html = '<tr><td>å§“åï¼š' + student.xm + '</td><td>æ€§åˆ«ï¼š' + student.xb + '</td></tr><tr><td>ç­çº§ï¼š' + student.bj + '</td><td>ä¸“ä¸šï¼š' + student.zym + '</td></tr><tr><td>å¹´çº§ï¼š' + student.nj + '</td><td>å­¦é™¢ï¼š' + student.yxm + '</td></tr><tr><td><button class="btn btn-sm btn-success" href="#" onclick="search(\'' + student.bj + '\')">è¯¥ç­å­¦ç”Ÿåå•</button></td><td><a class="btn btn-sm btn-danger" href="https://jwzx.cqupt.congm.in/jwzxtmp/showKebiao.php?type=student&id=' + student.xh + '" target="_blank">ä¸ªäººè¯¾è¡¨</a></td></tr>';
+            $id.html("ã€" + student.xh + " - " + student.xm + "ã€‘");
             $img.attr("src", "https://jwzx.cqupt.congm.in/showstuPic.php?xh=" + student.xh);
             $tbody.html(html);
             $(".list-table tr").removeClass("active");
