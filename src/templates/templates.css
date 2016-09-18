@@ -168,9 +168,9 @@ body._cqupt-body{
     white-space: nowrap;
     border-radius: 3px;
     font-family: Helvetica,'Helvetica Neue',Arial,'Microsoft YaHei',sans-serif;
-    -webkit-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
     overflow: hidden;
 }
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover ._cqupt-side-bar-tip{

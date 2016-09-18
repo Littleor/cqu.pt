@@ -370,13 +370,16 @@ input[value]{
 		background-color: transparent;
 		color: #fff;
 	}
-	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover a{
+	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover>a{
 		color: #fff;
 	}
-	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item span{
-		height: 28px;
+	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item ._cqupt-iconfont{
+		height: 24px;
 		font-size: 18px;
 		line-height: 24px;
+	}
+	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover ._cqupt-side-bar-tip{
+		right: 35px;
 	}
 	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item#_cqupt-title{
 		display: none;
