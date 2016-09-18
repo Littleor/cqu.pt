@@ -1,6 +1,7 @@
 require('../style.css');
 var $ = require('./jquery.min');
 require('./tagcloud.min');
+// 多说
 require('./duosuo_embed.min');
 
 $(function() {

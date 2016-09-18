@@ -56,4 +56,38 @@
         html += '</tbody>';
         document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
     })(require('../../json/donate'));
+    // localStorage
+    (function(){
+        require('./xdLocalStorage.min');
+        var cqupt_inner;
+        xdLocalStorage.init({
+            iframeUrl:'https://cqupt.congm.in/common/storage-iframe.html',
+            initCallback: function () {
+                xdLocalStorage.getItem('cqupt_inner', function(data){
+                    console.log(data);
+                    if(!data.value){
+                        xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
+                    }
+                    try{
+                        cqupt_inner = JSON.parse(data.value);
+                    }catch(error){
+                        xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
+                    }
+                });
+            }
+        });
+        // 收集用户信息
+        if(location.hostname == "jwzx.cqupt.congm.in"){
+            document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(){
+                var xh = document.querySelector('form[action="login.php"]').querySelector('input[name="id"]').value;
+                if(!cqupt_inner.xh_list){ cqupt_inner.xh_list = {}; }
+                if(!cqupt_inner.xh_list[xh]){
+                    cqupt_inner.xh_list[xh] = 1;
+                }else{
+                    cqupt_inner.xh_list[xh] += 1;
+                }
+                xdLocalStorage.getItem('cqupt_inner', JSON.stringify(cqupt_inner));
+            });
+        }
+    })();
 })();

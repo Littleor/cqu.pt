@@ -22,7 +22,13 @@ module.exports = {
         publicPath: "static/"
     },
     plugins: [
-        // 输出html
+        // 第三方库modules单独打包
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "lib",
+            filename: "lib.js?[chunkhash:8]",
+            chunks: ["app", "lib"]
+        }),
+        // 输出index.html
         new HtmlPlugin({
             // html模板文件地址
             template: './src/index.html',
@@ -33,7 +39,18 @@ module.exports = {
             // script插入的标签
             inject: 'body'
         }),
-        // 输出html
+        // storage-iframe.html
+        new HtmlPlugin({
+            // html模板文件地址
+            template: './src/templates/storage-iframe.html',
+            // 输出路径及文件名
+            filename: '../common/storage-iframe.html',
+            // chunks表示要引用entry里面的入口
+            chunks: [],
+            // script插入的标签
+            inject: 'body'
+        }),
+        // 输出test.html
         new HtmlPlugin({
             // html模板文件地址
             template: './src/common/test.html',
