@@ -60,22 +60,22 @@
     (function(){
         require('./xdLocalStorage.min');
         var cqupt_inner;
-        xdLocalStorage.init({
-            iframeUrl:'https://cqupt.congm.in/common/storage-iframe.html',
-            initCallback: function () {
-                xdLocalStorage.getItem('cqupt_inner', function(data){
-                    console.log(data);
-                    if(!data.value){
-                        xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
-                    }
-                    try{
-                        cqupt_inner = JSON.parse(data.value);
-                    }catch(error){
-                        xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
-                    }
-                });
-            }
-        });
+        // xdLocalStorage.init({
+        //     iframeUrl:'https://cqupt.congm.in/common/storage-iframe.html',
+        //     initCallback: function () {
+        //         xdLocalStorage.getItem('cqupt_inner', function(data){
+        //             console.log(data);
+        //             if(!data.value){
+        //                 xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
+        //             }
+        //             try{
+        //                 cqupt_inner = JSON.parse(data.value);
+        //             }catch(error){
+        //                 xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
+        //             }
+        //         });
+        //     }
+        // });
         // 收集用户信息
         if(location.hostname == "jwzx.cqupt.congm.in"){
             document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(){
