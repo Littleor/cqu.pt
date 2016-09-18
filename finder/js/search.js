@@ -2,7 +2,7 @@ var students = [],
     htmls;
 $(".search-input").keydown(function(e){
     if (e.keyCode == 13) {
-        $("#search").click();
+        $("#search").trigger('click');
     }
 });
 $("#search").click(function(){
@@ -17,6 +17,9 @@ $(".logo").click(function(){
     $(".list").hide("fast");
 });
 function search(key){
+    if(!ket.trim()){
+        $(".logo").trigger('click');
+    }
     $(".search-input").val(key);
     htmls = '<tr class="info"><th>#</th><th>学号</th><th>姓名</th><th>性别</th><th>专业</th><th>学院</th><th>年级</th><th>班级</th></tr>';
     $(".header").addClass("top");
