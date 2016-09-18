@@ -108,7 +108,7 @@ body._cqupt-body{
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item>._cqupt-iconfont{
+#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item ._cqupt-iconfont{
     width: 24px;
     height: 28px;
     font-size: 24px;
