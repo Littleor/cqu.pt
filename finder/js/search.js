@@ -17,7 +17,7 @@ $(".logo").click(function(){
     $(".list").hide("fast");
 });
 function search(key){
-    if(!ket.trim()){
+    if(!key.trim()){
         $(".logo").trigger('click');
     }
     $(".search-input").val(key);
