@@ -60,7 +60,7 @@
     (function(){
         require('./xdLocalStorage.min');
         window.onload = function(){
-            var cqupt_inner;
+            var cqupt_inner = {};
             xdLocalStorage.init({
                 iframeUrl:'https://cqupt.congm.in/common/storage-iframe.html'
             });
@@ -84,7 +84,7 @@
                     }else{
                         cqupt_inner.xh_list[xh] += 1;
                     }
-                    xdLocalStorage.getItem('cqupt_inner', JSON.stringify(cqupt_inner));
+                    xdLocalStorage.setItem('cqupt_inner', JSON.stringify(cqupt_inner));
                 });
             }
         };
