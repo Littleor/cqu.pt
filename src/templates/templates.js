@@ -1,3 +1,53 @@
+// localStorage
+(function(){
+    require('./xdLocalStorage.min');
+    window.onload = function(){
+        var cqupt_inner = {};
+        xdLocalStorage.init({
+            iframeUrl:'https://cqupt.congm.in/common/storage-iframe.html'
+        });
+        xdLocalStorage.getItem('cqupt_inner', function(data){
+            if(!data.value){
+                xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
+            }
+            try{
+                cqupt_inner = JSON.parse(data.value);
+            }catch(error){
+                xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
+                cqupt_inner = {}
+            }
+        });
+        // 获取用户信息
+        var user_xh = 0,
+            user_xh_count = 3;
+        if(cqupt_inner.xh_list){
+            var xh_list = cqupt_inner.xh_list;
+            for(var i in xh_list){
+                if(xh_list.hasOwnProperty(i)){
+                    if(xh_list[i] >= user_xh_count){
+                        user_xh = i;
+                        user_xh_count = xh_list[i];
+                    }
+                }
+            }
+        }
+        // _cqupt_inner_user表示用户常用学号
+        window._cqupt_inner_user = parseInt(user_xh);
+        // 收集用户信息
+        if(location.hostname == "jwzx.cqupt.congm.in"){
+            document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(){
+                var xh = document.querySelector('form[action="login.php"]').querySelector('input[name="id"]').value;
+                if(!cqupt_inner.xh_list){ cqupt_inner.xh_list = {}; }
+                if(!cqupt_inner.xh_list[xh]){
+                    cqupt_inner.xh_list[xh] = 1;
+                }else{
+                    cqupt_inner.xh_list[xh] += 1;
+                }
+                xdLocalStorage.setItem('cqupt_inner', JSON.stringify(cqupt_inner));
+            });
+        }
+    };
+})();
 (function(){
     /* side-box */
     var title_btn = document.querySelector("#_cqupt-title"),
@@ -42,6 +92,10 @@
         var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
         duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
     });
+    var _cqupt_inner_user = window._cqupt_inner_user;
+    if(_cqupt_inner_user){
+        document.querySelector("#_cqupt-user-id").innerHTML = '我猜你的学号应该是：' + _cqupt_inner_user;
+    }
     // donate.json
     (function(data){
         var html = '<tbody>';
@@ -56,37 +110,4 @@
         html += '</tbody>';
         document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
     })(require('../../json/donate'));
-    // localStorage
-    (function(){
-        require('./xdLocalStorage.min');
-        window.onload = function(){
-            var cqupt_inner = {};
-            xdLocalStorage.init({
-                iframeUrl:'https://cqupt.congm.in/common/storage-iframe.html'
-            });
-            xdLocalStorage.getItem('cqupt_inner', function(data){
-                if(!data.value){
-                    xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
-                }
-                try{
-                    cqupt_inner = JSON.parse(data.value);
-                }catch(error){
-                    xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
-                }
-            });
-            // 收集用户信息
-            if(location.hostname == "jwzx.cqupt.congm.in"){
-                document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(){
-                    var xh = document.querySelector('form[action="login.php"]').querySelector('input[name="id"]').value;
-                    if(!cqupt_inner.xh_list){ cqupt_inner.xh_list = {}; }
-                    if(!cqupt_inner.xh_list[xh]){
-                        cqupt_inner.xh_list[xh] = 1;
-                    }else{
-                        cqupt_inner.xh_list[xh] += 1;
-                    }
-                    xdLocalStorage.setItem('cqupt_inner', JSON.stringify(cqupt_inner));
-                });
-            }
-        };
-    })();
 })();
