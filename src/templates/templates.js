@@ -110,10 +110,6 @@
         var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
         duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
     });
-    var _cqupt_inner_user = window._cqupt_inner_user;
-    if(_cqupt_inner_user){
-        document.querySelector("#_cqupt-user-id").innerHTML = '我猜你的学号应该是：' + _cqupt_inner_user;
-    }
     // donate.json
     (function(data){
         var html = '<tbody>';
@@ -128,4 +124,23 @@
         html += '</tbody>';
         document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
     })(require('../../json/donate'));
+    // 查询用户信息
+    if(_cqupt_inner_user && _cqupt_inner_user.xh){
+        var request = new XMLHttpRequest();
+        request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + _cqupt_inner_user.xh, true);
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                var data = JSON.parse(request.responseText);
+                if(data.total === 1){
+                    _cqupt_inner_user = data.rows[0];
+                    document.querySelector("#_cqupt-user-id").innerHTML = '我猜你的学号应该是：' + _cqupt_inner_user.xh;
+                    if(warnBox){
+                        var warn_text_array = [_cqupt_inner_user.name + '同学，您好。欢迎使用内网外入！'];
+                        warnBox.down(warn_text_array);
+                    }
+                }
+            }
+        };
+        request.send();
+    }
 })();

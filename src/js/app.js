@@ -229,9 +229,7 @@ $(function() {
     };
     //读取josn数据，顶部悬浮提醒框warn文本及tagList快捷链接
     (function(data) {
-        var warn_text_array = data.warn;
         var tags = data.tagsList;
-        warnBox.down(warn_text_array);
         $.each(tags, function (i, e) {
             $tagcloud.append("<a target='_blank' href='" + e.href + "'>" + e.title + "</a>");
         });
@@ -240,11 +238,4 @@ $(function() {
             fontsize: 17
         });
     })(require('../../json/data'));
-    //底部信息切换
-    setTimeout(show_about, 10000);
-    function show_about() {
-        $(".about#tome").fadeToggle();
-        $(".about#toblues").fadeToggle();
-        setTimeout(show_about, 10000);
-    }
 });
