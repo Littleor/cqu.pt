@@ -38,7 +38,7 @@
             window._cqupt_inner_request = new XMLHttpRequest();
             _cqupt_inner_request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + _cqupt_inner_user.xh, true);
             _cqupt_inner_request.onload = function() {
-                if (request.status >= 200 && request.status < 400) {
+                if (_cqupt_inner_request.status >= 200 && _cqupt_inner_request.status < 400) {
                     var data = JSON.parse(request.responseText);
                     if(data.total === 1){
                         _cqupt_inner_user = data.rows[0];
