@@ -1,22 +1,21 @@
 // localStorage
 (function(){
-    require('./xdLocalStorage.min');
-    window.onload = function(){
+    var CrossStorageClient = require('cross-storage').CrossStorageClient;
+    var cqupt_inner_storage = new CrossStorageClient('https://cqupt.congm.in/common/storage-iframe.html');
+    cqupt_inner_storage.onConnect().then(function(){
+        return cqupt_inner_storage.get('cqupt_inner');
+    }).then(function(res) {
+        console.log(res);
         var cqupt_inner = {};
-        xdLocalStorage.init({
-            iframeUrl:'https://cqupt.congm.in/common/storage-iframe.html'
-        });
-        xdLocalStorage.getItem('cqupt_inner', function(data){
-            if(!data.value){
-                xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
-            }
-            try{
-                cqupt_inner = JSON.parse(data.value);
-            }catch(error){
-                xdLocalStorage.setItem('cqupt_inner', JSON.stringify({}));
-                cqupt_inner = {}
-            }
-        });
+        if(!res){
+            cqupt_inner_storage.set('cqupt_inner', JSON.stringify({}));
+        }
+        try{
+            cqupt_inner = JSON.parse(res);
+        }catch(error){
+            cqupt_inner_storage.set('cqupt_inner', JSON.stringify({}));
+            cqupt_inner = {};
+        }
         // 获取用户信息
         var user_xh = 0,
             user_xh_count = 3;
@@ -32,7 +31,9 @@
             }
         }
         // _cqupt_inner_user表示用户常用学号
-        window._cqupt_inner_user = parseInt(user_xh);
+        window._cqupt_inner_user = {
+            xh: parseInt(user_xh)
+        };
         // 收集用户信息
         if(location.hostname == "jwzx.cqupt.congm.in"){
             document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(){
@@ -43,10 +44,10 @@
                 }else{
                     cqupt_inner.xh_list[xh] += 1;
                 }
-                xdLocalStorage.setItem('cqupt_inner', JSON.stringify(cqupt_inner));
+                cqupt_inner_storage.set('cqupt_inner', JSON.stringify(cqupt_inner));
             });
         }
-    };
+    });
 })();
 (function(){
     /* side-box */

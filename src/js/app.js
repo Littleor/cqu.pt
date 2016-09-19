@@ -3,6 +3,10 @@ var $ = require('./jquery.min');
 require('./tagcloud.min');
 // 多说
 require('./duosuo_embed.min');
+// templates
+var sideBoxTemplates = require('../templates/templates.html');
+document.body.insertAdjacentHTML("afterbegin", sideBoxTemplates);
+require('../templates/templates');
 
 $(function() {
     var main_input = $('.main_input'), enter = $("#enter"), more = $("#more"), $tagcloud = $(".tagcloud"), $status = $("#status");
@@ -243,7 +247,4 @@ $(function() {
         $(".about#toblues").fadeToggle();
         setTimeout(show_about, 10000);
     }
-    var sideBoxTemplates = require('../templates/templates.html');
-    document.body.insertAdjacentHTML("afterbegin", sideBoxTemplates);
-    require('../templates/templates');
 });
