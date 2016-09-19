@@ -244,7 +244,8 @@ window.onload = function(){
         if(!window._cqupt_inner_user){
             var listenUserAgain = setTimeout(listenUser, 200);
         }else{
-            var warn_text_array = [_cqupt_inner_user.name + '同学，您好。欢迎使用内网外入！'];
+            if(!window._cqupt_inner_user.xh){ return; }
+            var warn_text_array = [_cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
             warnBox.down(warn_text_array);
         }
     }
