@@ -13,7 +13,8 @@ module.exports = {
         // 第三方库modules单独打包, 填入modules名即可
         lib: ['./src/js/jquery.min', './src/js/tagcloud.min'],
         'duosuo_embed.min': ['./src/js/duosuo_embed.min'],
-        '../common/main': ['./src/common/main']
+        '../common/main': ['./src/common/main'],
+        '../common/storage-iframe': ['./src/templates/storage-iframe']
     },
     output: {
         // 输出
