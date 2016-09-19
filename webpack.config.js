@@ -91,7 +91,7 @@ module.exports = {
         },  {
             // 字体
             // run `npm install url-loader --save-dev` before
-            test: /\.(eot|woff|woff2|ttf|svg)$/, loader: 'url', query: { limit: 8192, prefix: 'font/', name: 'font/[name].[ext]?[hash:8]' }
+            test: /\.(eot|woff|woff2|ttf|svg)$/, loader: 'url', query: { limit: 10240, prefix: 'font/', name: 'font/[name].[ext]?[hash:8]' }
         },  {
             // JSON
             // run `npm install json-loader --save-dev` before
