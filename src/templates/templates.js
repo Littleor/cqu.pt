@@ -29,24 +29,20 @@
                 }
             }
         }
-        // _cqupt_inner_user表示用户常用学号
-        window._cqupt_inner_user = {
-            xh: parseInt(user_xh)
-        };
         // 查询用户信息
-        if(_cqupt_inner_user.xh){
-            window._cqupt_inner_request = new XMLHttpRequest();
-            _cqupt_inner_request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + _cqupt_inner_user.xh, true);
-            _cqupt_inner_request.onload = function() {
-                if (_cqupt_inner_request.status >= 200 && _cqupt_inner_request.status < 400) {
+        if(parseInt(user_xh)){
+            var request = new XMLHttpRequest();
+            request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + parseInt(user_xh), true);
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
                     var data = JSON.parse(request.responseText);
                     if(data.total === 1){
-                        _cqupt_inner_user = data.rows[0];
+                        window._cqupt_inner_user = data.rows[0];
                         _cqupt_inner_user_show();
                     }
                 }
             };
-            _cqupt_inner_request.send();
+            request.send();
         }
         // 收集用户信息
         if(location.hostname == "jwzx.cqupt.congm.in"){
@@ -145,4 +141,8 @@ function _cqupt_inner_user_show() {
     if(!_cqupt_inner_user.xh){ return; }
     // 个人中心
     document.querySelector("#_cqupt-user-id").innerHTML = '同学！我猜你是 ' + _cqupt_inner_user.xm + '。';
+    // 主页顶部提醒
+    if(location.hostname == "cqupt.congm.in"){
+        showWarn();
+    }
 }
