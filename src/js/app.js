@@ -199,7 +199,9 @@ $(function() {
 // 监听变量
 function addListenVar(key, func) {
     if(!key){
-        var s = setTimeout(arguments.callee(key, func), 200);
+        var s = setTimeout(function(){
+            addListenVar(key, func)
+        }, 1000);
     }else{
         clearTimeout(s);
         func();
