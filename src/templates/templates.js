@@ -54,6 +54,7 @@
             if(loginForm){
                 loginForm.querySelector(options.btn).addEventListener('click', function(){
                     var xh = loginForm.querySelector(options.input).value;
+                    if(xh.trim()){ return; }
                     if(!cqupt_inner.xh_list){ cqupt_inner.xh_list = {}; }
                     if(!cqupt_inner.xh_list[xh]){
                         cqupt_inner.xh_list[xh] = 1;
