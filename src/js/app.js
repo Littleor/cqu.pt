@@ -240,6 +240,13 @@ window.onload = function(){
             });
         }
     };
-    var warn_text_array = [_cqupt_inner_user.name + '同学，您好。欢迎使用内网外入！'];
-    warnBox.down(warn_text_array);
+    function listenUser() {
+        if(!window._cqupt_inner_user){
+            var listenUserAgain = setTimeout(listenUser, 200);
+        }else{
+            var warn_text_array = [_cqupt_inner_user.name + '同学，您好。欢迎使用内网外入！'];
+            warnBox.down(warn_text_array);
+        }
+    }
+    listenUser();
 };
