@@ -40,7 +40,12 @@
                         window._cqupt_inner_user = data.rows[0];
                         _cqupt_inner_user_show();
                     }
+                }else{
+                    window._cqupt_inner_user = {};
                 }
+            };
+            request.onerror = function() {
+                window._cqupt_inner_user = {};
             };
             request.send();
         }
