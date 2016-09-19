@@ -205,9 +205,7 @@ function addListenVar(key, func) {
         func();
     }
 }
-addListenVar(window._cqupt_inner_user, showWarn);
-// showWarn
-function showWarn() {
+addListenVar(window._cqupt_inner_user, function(){
     //顶部悬浮提醒框
     var warn = $("#warn"), warn_text = $("#warn-text");
     var s = warn.get(0), si = warn_text.get(0);
@@ -253,4 +251,4 @@ function showWarn() {
     };
     var warn_text_array = [_cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
     warnBox.down(warn_text_array);
-}
+});

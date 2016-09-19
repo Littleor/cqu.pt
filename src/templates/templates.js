@@ -141,8 +141,4 @@ function _cqupt_inner_user_show() {
     if(!_cqupt_inner_user.xh){ return; }
     // 个人中心
     document.querySelector("#_cqupt-user-id").innerHTML = '同学！我猜你是 ' + _cqupt_inner_user.xm + '。';
-    // 主页顶部提醒
-    if(location.hostname == "cqupt.congm.in"){
-        showWarn();
-    }
 }
