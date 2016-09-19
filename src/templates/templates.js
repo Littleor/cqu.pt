@@ -36,16 +36,33 @@
         };
         // 收集用户信息
         if(location.hostname == "jwzx.cqupt.congm.in"){
-            document.querySelector('input[src="syspic/go.gif"]').addEventListener('click', function(){
-                var xh = document.querySelector('form[action="login.php"]').querySelector('input[name="id"]').value;
-                if(!cqupt_inner.xh_list){ cqupt_inner.xh_list = {}; }
-                if(!cqupt_inner.xh_list[xh]){
-                    cqupt_inner.xh_list[xh] = 1;
-                }else{
-                    cqupt_inner.xh_list[xh] += 1;
-                }
-                cqupt_inner_storage.set('cqupt_inner', JSON.stringify(cqupt_inner));
+            collect_user_info({
+                form: 'form[action="login.php"]',
+                btn: 'input[src="syspic/go.gif"]',
+                input: 'input[name="id"]'
             });
+        }
+        if(location.hostname.indexOf('xk') != -1){
+            collect_user_info({
+                form: 'form#loginForm',
+                btn: 'button#submitButton',
+                input: 'input[name="id"]'
+            });
+        }
+        function collect_user_info(options){
+            var loginForm = document.querySelector(options.form);
+            if(loginForm){
+                loginForm.querySelector(options.btn).addEventListener('click', function(){
+                    var xh = loginForm.querySelector(options.input).value;
+                    if(!cqupt_inner.xh_list){ cqupt_inner.xh_list = {}; }
+                    if(!cqupt_inner.xh_list[xh]){
+                        cqupt_inner.xh_list[xh] = 1;
+                    }else{
+                        cqupt_inner.xh_list[xh] += 1;
+                    }
+                    cqupt_inner_storage.set('cqupt_inner', JSON.stringify(cqupt_inner));
+                });
+            }
         }
     });
 })();
