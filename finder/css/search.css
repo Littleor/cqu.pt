@@ -104,15 +104,15 @@ body{
     padding: 10px;
 }
 .student-img{
-    padding-right: 0;
+    padding-left: 0;
 }
 .student-img-cet{
-    padding-left: 0;
+    padding-right: 0;
 }
 .student-info{
     position: absolute;
     width: 100%;
-    margin-left: 120px;
+    margin-left: 240px;
     overflow: hidden;
     word-wrap: break-word;
 }
