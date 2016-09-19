@@ -3,10 +3,6 @@ var $ = require('./jquery.min');
 require('./tagcloud.min');
 // 多说
 require('./duosuo_embed.min');
-// templates
-var sideBoxTemplates = require('../templates/templates.html');
-document.body.insertAdjacentHTML("afterbegin", sideBoxTemplates);
-require('../templates/templates');
 
 $(function() {
     var main_input = $('.main_input'), enter = $("#enter"), more = $("#more"), $tagcloud = $(".tagcloud"), $status = $("#status");
@@ -196,5 +192,55 @@ $(function() {
         });
     })(require('../../json/data'));
 });
-window.onload = function(){
-};
+// templates
+var sideBoxTemplates = require('../templates/templates.html');
+document.body.insertAdjacentHTML("afterbegin", sideBoxTemplates);
+require('../templates/templates');
+// ajax事件监听
+_cqupt_inner_request.addEventListener("load", function(){
+    //顶部悬浮提醒框
+    var warn = $("#warn"), warn_text = $("#warn-text");
+    var s = warn.get(0), si = warn_text.get(0);
+    var s_scrollLeft, s_add = 1, tmar;
+    //文字滑动
+    function mar() {
+        if (s.offsetWidth <= si.offsetWidth) {
+            s_scrollLeft = s.scrollLeft;
+            s.scrollLeft += s_add;
+            if (s_scrollLeft == s.scrollLeft) {
+                s_add = -s_add;
+            }
+            tmar = setTimeout(mar, 20);
+        }
+    }
+    //框体升降
+    var warnBox = {
+        up: function () {
+            warn.animate({"top": "-48px"}, "slow");
+            clearTimeout(tmar);
+        },
+        down: function (text) {
+            var t = {
+                showTime: 2500,
+                moveTime: 4000,
+                totalTime: 15000
+            };
+            $.each(text, function (i, e) {
+                setTimeout(function () {
+                    s.scrollLeft = 0;
+                    warn_text.html(e);
+                    warn.animate({"top": "18px"}, "slow");
+                }, t.totalTime * i + t.showTime);
+                setTimeout(function () {
+                    mar();
+                }, t.totalTime * i + t.moveTime);
+                setTimeout(function () {
+                    warnBox.up();
+                }, t.totalTime * i + t.totalTime);
+
+            });
+        }
+    };
+    var warn_text_array = [_cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
+    warnBox.down(warn_text_array);
+});

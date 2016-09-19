@@ -35,9 +35,9 @@
         };
         // 查询用户信息
         if(_cqupt_inner_user.xh){
-            var request = new XMLHttpRequest();
-            request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + _cqupt_inner_user.xh, true);
-            request.onload = function() {
+            window._cqupt_inner_request = new XMLHttpRequest();
+            _cqupt_inner_request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + _cqupt_inner_user.xh, true);
+            _cqupt_inner_request.onload = function() {
                 if (request.status >= 200 && request.status < 400) {
                     var data = JSON.parse(request.responseText);
                     if(data.total === 1){
@@ -46,7 +46,7 @@
                     }
                 }
             };
-            request.send();
+            _cqupt_inner_request.send();
         }
         // 收集用户信息
         if(location.hostname == "jwzx.cqupt.congm.in"){
@@ -144,54 +144,5 @@
 function _cqupt_inner_user_show() {
     if(!_cqupt_inner_user.xh){ return; }
     // 个人中心
-    document.querySelector("#_cqupt-user-id").innerHTML = '同学！我猜你是：' + _cqupt_inner_user.xm;
-    // 主页顶部提醒
-    (function(){
-        if(location.hostname != "cqupt.congm.in"){ return; }
-        //顶部悬浮提醒框
-        var warn = $("#warn"), warn_text = $("#warn-text");
-        var s = warn.get(0), si = warn_text.get(0);
-        var s_scrollLeft, s_add = 1, tmar;
-        //文字滑动
-        function mar() {
-            if (s.offsetWidth <= si.offsetWidth) {
-                s_scrollLeft = s.scrollLeft;
-                s.scrollLeft += s_add;
-                if (s_scrollLeft == s.scrollLeft) {
-                    s_add = -s_add;
-                }
-                tmar = setTimeout(mar, 20);
-            }
-        }
-        //框体升降
-        var warnBox = {
-            up: function () {
-                warn.animate({"top": "-48px"}, "slow");
-                clearTimeout(tmar);
-            },
-            down: function (text) {
-                var t = {
-                    showTime: 2500,
-                    moveTime: 4000,
-                    totalTime: 15000
-                };
-                $.each(text, function (i, e) {
-                    setTimeout(function () {
-                        s.scrollLeft = 0;
-                        warn_text.html(e);
-                        warn.animate({"top": "18px"}, "slow");
-                    }, t.totalTime * i + t.showTime);
-                    setTimeout(function () {
-                        mar();
-                    }, t.totalTime * i + t.moveTime);
-                    setTimeout(function () {
-                        warnBox.up();
-                    }, t.totalTime * i + t.totalTime);
-
-                });
-            }
-        };
-        var warn_text_array = [_cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
-        warnBox.down(warn_text_array);
-    })();
+    document.querySelector("#_cqupt-user-id").innerHTML = '同学！我猜你是 ' + _cqupt_inner_user.xm + '。';
 }
