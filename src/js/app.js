@@ -184,6 +184,19 @@ $(function() {
     $(".shareBox").on("mouseleave", function () {
         sharebtn.fadeOut();
     });
+    //读取josn数据，顶部悬浮提醒框warn文本及tagList快捷链接
+    (function(data) {
+        var tags = data.tagsList;
+        $.each(tags, function (i, e) {
+            $tagcloud.append("<a target='_blank' href='" + e.href + "'>" + e.title + "</a>");
+        });
+        tagcloud({
+            radius: 100,
+            fontsize: 17
+        });
+    })(require('../../json/data'));
+});
+window.onload = function(){
     //顶部悬浮提醒框
     var warn = $("#warn"), warn_text = $("#warn-text");
     var s = warn.get(0), si = warn_text.get(0);
@@ -227,15 +240,6 @@ $(function() {
             });
         }
     };
-    //读取josn数据，顶部悬浮提醒框warn文本及tagList快捷链接
-    (function(data) {
-        var tags = data.tagsList;
-        $.each(tags, function (i, e) {
-            $tagcloud.append("<a target='_blank' href='" + e.href + "'>" + e.title + "</a>");
-        });
-        tagcloud({
-            radius: 100,
-            fontsize: 17
-        });
-    })(require('../../json/data'));
-});
+    var warn_text_array = [_cqupt_inner_user.name + '同学，您好。欢迎使用内网外入！'];
+    warnBox.down(warn_text_array);
+};

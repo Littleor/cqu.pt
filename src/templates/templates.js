@@ -43,10 +43,6 @@
                     if(data.total === 1){
                         _cqupt_inner_user = data.rows[0];
                         document.querySelector("#_cqupt-user-id").innerHTML = '我猜你的学号应该是：' + _cqupt_inner_user.xh;
-                        if(warnBox){
-                            var warn_text_array = [_cqupt_inner_user.name + '同学，您好。欢迎使用内网外入！'];
-                            warnBox.down(warn_text_array);
-                        }
                     }
                 }
             };
