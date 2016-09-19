@@ -44,6 +44,7 @@ function search(key){
         if(!$(this).hasClass("info")){
             var $id = $(".student-id"),
                 $img = $(".student-img"),
+                $img_cet = $(".student-img-cet"),
                 $tbody = $(".student-table tbody");
             $id.html("【 学号 - 姓名 】");
             $img.attr("src", "");
@@ -52,6 +53,7 @@ function search(key){
                 html = '<tr><td>姓名：' + student.xm + '</td><td>性别：' + student.xb + '</td></tr><tr><td>班级：' + student.bj + '</td><td>专业：' + student.zym + '</td></tr><tr><td>年级：' + student.nj + '</td><td>学院：' + student.yxm + '</td></tr><tr><td><button class="btn btn-sm btn-success" href="#" onclick="search(\'' + student.bj + '\')">该班学生名单</button></td><td><a class="btn btn-sm btn-danger" href="https://jwzx.cqupt.congm.in/jwzxtmp/showKebiao.php?type=student&id=' + student.xh + '" target="_blank">个人课表</a></td></tr>';
             $id.html("【" + student.xh + " - " + student.xm + "】");
             $img.attr("src", "https://jwzx.cqupt.congm.in/showstuPic.php?xh=" + student.xh);
+            $img_cet.attr("src", "http://172.22.80.212.cqupt.congm.in/PHOTO0906CET/" + student.xh + ".JPG");
             $tbody.html(html);
             $(".list-table tr").removeClass("active");
             $(this).addClass("active");

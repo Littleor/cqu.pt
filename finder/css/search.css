@@ -97,10 +97,17 @@ body{
 .student-id{
     text-align: center;
 }
-.student-img{
+.student-img,
+.student-img-cet{
     width: 120px;
     height: 160px;
     padding: 10px;
+}
+.student-img{
+    padding-right: 0;
+}
+.student-img-cet{
+    padding-left: 0;
 }
 .student-info{
     position: absolute;

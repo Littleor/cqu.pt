@@ -229,7 +229,7 @@ function addListenVar() {
             },
             down: function (text) {
                 var t = {
-                    showTime: 2500,
+                    showTime: 500,
                     moveTime: 4000,
                     totalTime: 15000
                 };
@@ -245,7 +245,6 @@ function addListenVar() {
                     setTimeout(function () {
                         warnBox.up();
                     }, t.totalTime * i + t.totalTime);
-
                 });
             }
         };
