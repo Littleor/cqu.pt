@@ -104,10 +104,10 @@ body{
     padding: 10px;
 }
 .student-img{
-    padding-left: 0;
+    padding-right: 0;
 }
 .student-img-cet{
-    padding-right: 0;
+    padding-left: 0;
 }
 .student-info{
     position: absolute;
