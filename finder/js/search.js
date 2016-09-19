@@ -122,6 +122,7 @@ function _cqupt_inner_user_show(){
 function search(key){
     if(!key.trim()){
         $(".logo").trigger('click');
+        return;
     }
     $(".search-input").val(key);
     htmls = '<tr class="info"><th>#</th><th>学号</th><th>姓名</th><th>性别</th><th>专业</th><th>学院</th><th>年级</th><th>班级</th></tr>';
@@ -165,5 +166,5 @@ function search(key){
     });
     // 收集用户点击次数
     _cqupt_inner_finder++;
-    cqupt_inner_storage.set('cqupt_inner_finder', _cqupt_inner_finder);
+    localStorage.setItem('cqupt_inner_finder', _cqupt_inner_finder);
 }
