@@ -17,23 +17,20 @@ $(".logo").click(function(){
     $(".list").hide("fast");
 });
 // 用户信息
-var CrossStorageClient = require('cross-storage').CrossStorageClient;
-var cqupt_inner_storage = new CrossStorageClient('https://cqupt.congm.in/common/storage-iframe.html');
-cqupt_inner_storage.onConnect().then(function(){
-    window._cqupt_inner_finder = cqupt_inner_storage.get('cqupt_inner_finder');
+(function(){
+    window._cqupt_inner_finder = localStorage.getItem('cqupt_inner_finder');
     if(!window._cqupt_inner_finder){
         _cqupt_inner_finder = 0;
     }
-    return cqupt_inner_storage.get('cqupt_inner');
-}).then(function(res) {
+    var res = localStorage.getItem('cqupt_inner');
     var cqupt_inner = {};
     if(!res){
-        cqupt_inner_storage.set('cqupt_inner', JSON.stringify({}));
+        localStorage.setItem('cqupt_inner', JSON.stringify({}));
     }
     try{
         cqupt_inner = JSON.parse(res);
     }catch(error){
-        cqupt_inner_storage.set('cqupt_inner', JSON.stringify({}));
+        localStorage.setItem('cqupt_inner', JSON.stringify({}));
         cqupt_inner = {};
     }
     // 获取用户信息
@@ -70,7 +67,7 @@ cqupt_inner_storage.onConnect().then(function(){
         };
         request.send();
     }
-});
+})();
 function _cqupt_inner_user_show(){
     //顶部悬浮提醒框
     var warn = $("#warn"), warn_text = $("#warn-text");
