@@ -125,6 +125,7 @@
         document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
     })(require('../../json/donate'));
     // 查询用户信息
+    var _cqupt_inner_user = window._cqupt_inner_user;
     if(_cqupt_inner_user && _cqupt_inner_user.xh){
         var request = new XMLHttpRequest();
         request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + _cqupt_inner_user.xh, true);
