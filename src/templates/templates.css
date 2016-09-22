@@ -46,6 +46,9 @@ body._cqupt-body{
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
+._cqupt-text-center{
+    text-align: center;
+}
 #_cqupt-side-box{
     position: fixed;
     z-index: 999997;
@@ -65,6 +68,10 @@ body._cqupt-body{
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+#_cqupt-side-box *{
+    margin: 0;
+    padding: 0;
 }
 #_cqupt-side-box._cqupt-active{
     right: 0;
@@ -285,6 +292,42 @@ body._cqupt-body{
     margin: 10px 0 0;
     text-align: center;
 }
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-list{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 5px;
+}
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-item,
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-item-o{
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 5px 15px;
+    margin: 5px 5px 3px 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4fc08d;
+    border-bottom: 2px solid #3aa373;
+    border-radius: 3px;
+    transition: all .25s ease-in-out;
+}
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-item-o{
+    background: #fefefe;
+    color: #4fc08d;
+    border: 1px solid #4fc08d;
+}
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-item-o:hover{
+    color: #fff;
+    background-color: #4fc08d;
+    border-bottom: 2px solid #3aa373;
+    margin: 5px 5px 2px 0;
+}
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-donate-img{
     width: 100%;
     margin: 0;
@@ -308,6 +351,18 @@ body._cqupt-body{
 }
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-info-list p{
     text-indent: .75em;
+}
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-info{
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    padding: 10px 15px 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+}
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-more{
+    margin-top: 10px;
+    border-left: 3px solid #ddd;
+    padding-left: 10px;
 }
 #_cqupt-duosuo ._cqupt-loading{
     color: #555;
