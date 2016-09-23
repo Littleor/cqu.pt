@@ -321,6 +321,7 @@ body._cqupt-body{
     transition: all .25s ease-in-out;
 }
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-item-o{
+    background: transparent;
     color: #4fc08d;
     border: 1px solid #4fc08d;
 }
