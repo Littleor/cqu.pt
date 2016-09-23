@@ -23,36 +23,6 @@ var _hmt = _hmt || [];
     }
 })();
 
-(function() {
-    /* 插入css */
-    var css = document.createElement("link");
-    css.rel = "stylesheet";
-    css.href = "//cqupt.congm.in/common/main.css?" + new Date().getTime();
-    if(self == top){
-        document.head.appendChild(css);
-    }
-    /* 插入dom */
-    css.onload = function(){
-        var templates = require('../templates/templates.html');
-        if(self == top){
-            document.body.insertAdjacentHTML("afterbegin", templates);
-            document.body.classList.add('_cqupt-body');
-            require('../templates/templates');
-        }
-    };
-})();
-
-/* 多说 */
-window.duoshuoQuery = {short_name:"cqupt-inner"};
-(function() {
-    var duosuo = document.createElement("script");
-    duosuo.src = "//cqupt.congm.in/static/duosuo_embed.min.js";
-    duosuo.charset = "utf-8";
-    if(self == top){
-        document.body.appendChild(duosuo);
-    }
-})();
-
 /* 链接及图片地址转换 */
 (function(){
     var all_a = document.getElementsByTagName("a");
@@ -82,5 +52,35 @@ window.duoshuoQuery = {short_name:"cqupt-inner"};
             }
             img_a[i].src = url_array.join('/');
         }
+    }
+})();
+
+(function() {
+    /* 插入css */
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "//cqupt.congm.in/common/main.css?" + new Date().getTime();
+    if(self == top){
+        document.head.appendChild(css);
+    }
+    /* 插入dom */
+    css.onload = function(){
+        var templates = require('../templates/templates.html');
+        if(self == top){
+            document.body.insertAdjacentHTML("afterbegin", templates);
+            document.body.classList.add('_cqupt-body');
+            require('../templates/templates');
+        }
+    };
+})();
+
+/* 多说 */
+window.duoshuoQuery = {short_name:"cqupt-inner"};
+(function() {
+    var duosuo = document.createElement("script");
+    duosuo.src = "//cqupt.congm.in/static/duosuo_embed.min.js";
+    duosuo.charset = "utf-8";
+    if(self == top){
+        document.body.appendChild(duosuo);
     }
 })();
