@@ -38,6 +38,10 @@
                     var data = JSON.parse(request.responseText);
                     if(data.total === 1){
                         window._cqupt_inner_user = data.rows[0];
+                        _cqupt_inner_user['xb'] = _cqupt_inner_user['xb'].trim();
+                        _cqupt_inner_user['bj'] = _cqupt_inner_user['bj'].trim() + '班';
+                        _cqupt_inner_user['nj'] = _cqupt_inner_user['nj'].trim() + '级';
+                        _cqupt_inner_user['zym'] = _cqupt_inner_user['zym'].trim() + '专业';
                         _cqupt_inner_user_show();
                     }
                 }else{
@@ -154,6 +158,7 @@
 function _cqupt_inner_user_show() {
     if(!_cqupt_inner_user.xh){ return; }
     document.querySelector("._cqupt-nav-info").classList.add('_cqupt-show');
+    document.querySelector("._cqupt-nav-user-name").innerHTML = _cqupt_inner_user.xm;
     var nav_user_list = ['xm', 'xb', 'xh', 'yxm', 'zym', 'nj', 'bj'];
     nav_user_list.forEach(function(e){
         document.querySelector("._cqupt-nav-user-" + e).innerHTML = _cqupt_inner_user[e].trim();
