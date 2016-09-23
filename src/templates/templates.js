@@ -154,7 +154,10 @@
 function _cqupt_inner_user_show() {
     if(!_cqupt_inner_user.xh){ return; }
     document.querySelector("._cqupt-nav-info").classList.add('_cqupt-show');
-    document.querySelector("._cqupt-nav-user-name").innerHTML = _cqupt_inner_user.xm;
+    var nav_user_list = ['xm', 'xb', 'xh', 'yxm', 'zym', 'bj', 'bj'];
+    nav_user_list.forEach(function(e){
+        document.querySelector("._cqupt-nav-user-" + e).innerHTML = _cqupt_inner_user[e];
+    });
     document.querySelector("._cqupt-nav-user-kb-btn").setAttribute('href', 'https://jwzx.cqupt.congm.in/jwzxtmp/showKebiao.php?type=student&id=' + _cqupt_inner_user.xh);
     document.querySelector("._cqupt-nav-user-pic").innerHTML = '<img src="https://jwzx.cqupt.congm.in/showstuPic.php?xh=' + _cqupt_inner_user.xh + '"><img src="http://172.22.80.212.cqupt.congm.in/PHOTO0906CET/' + _cqupt_inner_user.xh + '.JPG">';
 }
