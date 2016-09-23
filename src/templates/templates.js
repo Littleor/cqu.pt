@@ -126,6 +126,15 @@
         var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
         duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
     });
+    /* info */
+    document.querySelector('._cqupt-nav-user-info-btn').addEventListener('click', function(){
+        document.querySelector('._cqupt-nav-user-info').classList.remove('_cqupt-hidden');
+        document.querySelector('._cqupt-nav-user-pic').classList.add('_cqupt-hidden');
+    });
+    document.querySelector('._cqupt-nav-user-pic-btn').addEventListener('click', function(){
+        document.querySelector('._cqupt-nav-user-info').classList.add('_cqupt-hidden');
+        document.querySelector('._cqupt-nav-user-pic').classList.remove('_cqupt-hidden');
+    });
     // donate.json
     (function(data){
         var html = '<tbody>';
@@ -144,6 +153,8 @@
 
 function _cqupt_inner_user_show() {
     if(!_cqupt_inner_user.xh){ return; }
-    // 个人中心
-    document.querySelector("#_cqupt-user-id").innerHTML = '同学！我猜你是 ' + _cqupt_inner_user.xm + '。';
+    document.querySelector("._cqupt-nav-info").classList.add('._cqupt-show');
+    document.querySelector("._cqupt-nav-user-name").innerHTML = _cqupt_inner_user.xm;
+    document.querySelector("._cqupt-nav-user-kb-btn").setAttribute('href', 'https://jwzx.cqupt.congm.in/jwzxtmp/showKebiao.php?type=student&id=' + _cqupt_inner_user.xh);
+    document.querySelector("._cqupt-nav-user-pic").innerHTML('<img src="https://jwzx.cqupt.congm.in/showstuPic.php?xh=' + _cqupt_inner_user.xh + '"><img src="http://172.22.80.212.cqupt.congm.in/PHOTO0906CET/' + _cqupt_inner_user.xh + '.JPG">');
 }

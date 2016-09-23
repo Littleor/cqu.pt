@@ -16,8 +16,11 @@
 body._cqupt-body{
     padding-right: 45px !important;
 }
+._cqupt-show{
+    display: block !important;
+}
 ._cqupt-hidden{
-    display: none;
+    display: none !important;
 }
 ._cqupt-label{
     display: inline-block;
@@ -334,7 +337,8 @@ body._cqupt-body{
     padding: 0;
     border: 0;
 }
-#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-donate-list{
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-donate-list,
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-user-info table{
     background-color: transparent;
     width: 100%;
     max-width: 100%;
@@ -345,6 +349,10 @@ body._cqupt-body{
     text-align: center;
     font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
 }
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-user-info table{
+    margin-top: 5px;
+    text-align: left;
+}
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-info-list{
     margin-top: 10px;
     border-left: 3px solid #ddd;
@@ -353,16 +361,24 @@ body._cqupt-body{
     text-indent: .75em;
 }
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-info{
+    display: none;
     background-color: #f5f5f5;
     border-radius: 2px;
     padding: 10px 15px 12px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     margin-bottom: 15px;
 }
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-info-cont,
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-more{
     margin-top: 10px;
     border-left: 3px solid #ddd;
     padding-left: 10px;
+}
+#_cqupt-side-box ._cqupt-content ._cqupt-content-bd ._cqupt-nav-user-pic img{
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 #_cqupt-duosuo ._cqupt-loading{
     color: #555;
