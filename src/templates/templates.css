@@ -22,7 +22,7 @@ body._cqupt-body{
 ._cqupt-hidden{
     display: none !important;
 }
-._cqupt-label{
+#_cqupt-side-box ._cqupt-label{
     display: inline-block;
     padding: 0 4px 0 5px;
     border: 1px solid #42b983;
@@ -33,12 +33,12 @@ body._cqupt-body{
     line-height: 20px;
     text-align: center;
 }
-._cqupt-label-o{
+#_cqupt-side-box ._cqupt-label-o{
     border: none;
     color: #fff;
     background-color: #42b983;
 }
-._cqupt-label-sm{
+#_cqupt-side-box ._cqupt-label-sm{
     padding: 0 4px;
     font-size: 12px;
     line-height: 18px;
@@ -49,7 +49,7 @@ body._cqupt-body{
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
-._cqupt-text-center{
+#_cqupt-side-box ._cqupt-text-center{
     text-align: center;
 }
 #_cqupt-side-box{
@@ -60,8 +60,6 @@ body._cqupt-body{
     top: 0;
     right: -350px;
     color: #34495e;
-    margin: 0;
-    padding: 0;
     background-color: rgba(255, 255, 255, 0.95);
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
