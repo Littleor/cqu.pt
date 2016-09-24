@@ -32,7 +32,7 @@
         // 查询用户信息
         if(parseInt(user_xh)){
             var request = new XMLHttpRequest();
-            request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + parseInt(user_xh), true);
+            request.open('GET', 'https://jwzx.cqupt.congm.in/jwzxtmp/data/json_studentList.php?dirId=&page=1&rows=1&searchKey=' + parseInt(user_xh), true);
             request.onload = function() {
                 if (request.status >= 200 && request.status < 400) {
                     var data = JSON.parse(request.responseText);
