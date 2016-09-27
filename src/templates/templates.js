@@ -180,5 +180,18 @@ function _cqupt_inner_user_show() {
         document.querySelector("._cqupt-nav-user-" + e).innerHTML = _cqupt_inner_user[e].trim();
     });
     document.querySelector("._cqupt-nav-user-kb-btn").setAttribute('href', 'https://jwzx.cqupt.congm.in/jwzxtmp/showKebiao.php?type=student&id=' + _cqupt_inner_user.xh);
-    document.querySelector("._cqupt-nav-user-pic").innerHTML = '<img src="https://jwzx.cqupt.congm.in/showstuPic.php?xh=' + _cqupt_inner_user.xh + '"><img src="https://congm.in/proxy/172.22.80.212.cqupt.congm.in/PHOTO0906CET/' + _cqupt_inner_user.xh + '.JPG">';
+    var jwzx_img = document.createElement('img');
+    jwzx_img.src = "https://jwzx.cqupt.congm.in/showstuPic.php?xh=" + _cqupt_inner_user.xh;
+    jwzx_img.onload = function(){
+        if(jwzx_img.complete){
+            document.querySelector("._cqupt-nav-user-pic").appendChild(jwzx_img);
+        }
+    };
+    var cet_img = document.createElement('img');
+    cet_img.src = "https://congm.in/proxy/172.22.80.212.cqupt.congm.in/PHOTO0906CET/" + _cqupt_inner_user.xh + ".JPG";
+    cet_img.onload = function(){
+        if(cet_img.complete){
+            document.querySelector("._cqupt-nav-user-pic").appendChild(cet_img);
+        }
+    }
 }
