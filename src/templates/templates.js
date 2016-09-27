@@ -49,8 +49,8 @@
                 if (request.status >= 200 && request.status < 400) {
                     var data = JSON.parse(request.responseText);
                     if(data.total === 1){
-                        window._cqupt_inner_user = data.rows[0];
-                        cqupt_inner_storage.set('cqupt_inner', JSON.stringify(extend({}, cqupt_inner, data.rows[0])));
+                        window._cqupt_inner_user = extend({}, cqupt_inner, data.rows[0]);
+                        cqupt_inner_storage.set('cqupt_inner', JSON.stringify(_cqupt_inner_user));
                         _cqupt_inner_user_show();
                     }
                 }else{
@@ -62,6 +62,7 @@
             };
             request.send();
         }else if(parseInt(user_xh)){
+            window._cqupt_inner_user = cqupt_inner;
             _cqupt_inner_user_show();
         }
         // 收集用户信息
