@@ -35,14 +35,14 @@
             for(var i in xh_list){
                 if(xh_list.hasOwnProperty(i)){
                     if(xh_list[i] >= user_xh_count){
-                        user_xh = i;
+                        user_xh = parseInt(i);
                         user_xh_count = xh_list[i];
                     }
                 }
             }
         }
         // 查询用户信息
-        if(!cqupt_inner.xh || (cqupt_inner.xh != parseInt(user_xh)) ){
+        if(!cqupt_inner.xh || (cqupt_inner.xh != user_xh) ){
             var request = new XMLHttpRequest();
             request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + parseInt(user_xh), true);
             request.onload = function() {
@@ -61,7 +61,7 @@
                 window._cqupt_inner_user = {};
             };
             request.send();
-        }else if(parseInt(user_xh)){
+        }else if(user_xh){
             window._cqupt_inner_user = cqupt_inner;
             _cqupt_inner_user_show();
         }
