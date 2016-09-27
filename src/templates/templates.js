@@ -42,7 +42,7 @@
             }
         }
         // 查询用户信息
-        if(!cqupt_inner.xh || (cqupt_inner.xh != user_xh) ){
+        if(!cqupt_inner.xh || (user_xh && cqupt_inner.xh != user_xh) ){
             var request = new XMLHttpRequest();
             request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + parseInt(user_xh), true);
             request.onload = function() {
