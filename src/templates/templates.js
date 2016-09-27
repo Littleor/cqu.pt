@@ -42,28 +42,30 @@
             }
         }
         // 查询用户信息
-        if(!cqupt_inner.xh || (user_xh && cqupt_inner.xh != user_xh) ){
-            var request = new XMLHttpRequest();
-            request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + parseInt(user_xh), true);
-            request.onload = function() {
-                if (request.status >= 200 && request.status < 400) {
-                    var data = JSON.parse(request.responseText);
-                    if(data.total === 1){
-                        window._cqupt_inner_user = extend({}, cqupt_inner, data.rows[0]);
-                        cqupt_inner_storage.set('cqupt_inner', JSON.stringify(_cqupt_inner_user));
-                        _cqupt_inner_user_show();
+        if(user_xh){
+            if(!cqupt_inner.xh || cqupt_inner.xh != user_xh){
+                var request = new XMLHttpRequest();
+                request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + parseInt(user_xh), true);
+                request.onload = function() {
+                    if (request.status >= 200 && request.status < 400) {
+                        var data = JSON.parse(request.responseText);
+                        if(data.total === 1){
+                            window._cqupt_inner_user = extend({}, cqupt_inner, data.rows[0]);
+                            cqupt_inner_storage.set('cqupt_inner', JSON.stringify(_cqupt_inner_user));
+                            _cqupt_inner_user_show();
+                        }
+                    }else{
+                        window._cqupt_inner_user = {};
                     }
-                }else{
+                };
+                request.onerror = function() {
                     window._cqupt_inner_user = {};
-                }
-            };
-            request.onerror = function() {
-                window._cqupt_inner_user = {};
-            };
-            request.send();
-        }else if(user_xh){
-            window._cqupt_inner_user = cqupt_inner;
-            _cqupt_inner_user_show();
+                };
+                request.send();
+            }else{
+                window._cqupt_inner_user = cqupt_inner;
+                _cqupt_inner_user_show();
+            }
         }
         // 收集用户信息
         if(location.hostname == "jwzx.cqupt.congm.in"){
