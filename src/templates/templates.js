@@ -1,5 +1,17 @@
 // localStorage
 (function(){
+    var extend = function(out){
+        out = out || {};
+        for(var i = 1; i < arguments.length; i++){
+            if (!arguments[i]){ continue; }
+            for(var key in arguments[i]){
+                if(arguments[i].hasOwnProperty(key)){
+                    out[key] = arguments[i][key];
+                }
+            }
+        }
+        return out;
+    };
     var CrossStorageClient = require('cross-storage').CrossStorageClient;
     var cqupt_inner_storage = new CrossStorageClient('https://cqupt.congm.in/common/storage-iframe.html');
     cqupt_inner_storage.onConnect().then(function(){
@@ -30,7 +42,7 @@
             }
         }
         // 查询用户信息
-        if(parseInt(user_xh)){
+        if(!cqupt_inner.xh || (cqupt_inner.xh != parseInt(user_xh)) ){
             var request = new XMLHttpRequest();
             request.open('GET', 'https://blues.congm.in/stu.php?searchKey=' + parseInt(user_xh), true);
             request.onload = function() {
@@ -38,6 +50,7 @@
                     var data = JSON.parse(request.responseText);
                     if(data.total === 1){
                         window._cqupt_inner_user = data.rows[0];
+                        cqupt_inner_storage.set('cqupt_inner', JSON.stringify(extend({}, cqupt_inner, data.rows[0])));
                         _cqupt_inner_user['xb'] = _cqupt_inner_user['xb'].trim();
                         _cqupt_inner_user['bj'] = _cqupt_inner_user['bj'].trim() + '班';
                         _cqupt_inner_user['nj'] = _cqupt_inner_user['nj'].trim() + '级';
