@@ -248,7 +248,7 @@ function addListenVar() {
                 });
             }
         };
-        var warn_text_array = [_cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
+        var warn_text_array = ['由于内网外入服务器网络及流量成本过高（每月已达200+元），近期内网外入将做出一些可能影响正常使用的变动。', _cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
         warnBox.down(warn_text_array);
     }
 }
