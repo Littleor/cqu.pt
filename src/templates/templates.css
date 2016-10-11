@@ -49,6 +49,24 @@ body._cqupt-body{
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
+#_cqupt-tip {
+    display: inline-block;
+    position: absolute;
+    top: auto;
+    bottom: 5px;
+    left: auto;
+    right: 100%;
+    margin-right: 55px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    background-color: rgba(66, 185, 131, .95);
+    padding: 5px 10px;
+    white-space: nowrap;
+    border-radius: 3px;
+    overflow: hidden;
+}
 #_cqupt-side-box ._cqupt-text-center{
     text-align: center;
 }
