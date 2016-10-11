@@ -264,7 +264,7 @@ input[value]{
 .about#toblues{
 	display: none;
 }
-#_cqupt-tip {
+#_cqupt-side-box #_cqupt-tip {
 	display: inline-block;
 	position: absolute;
 	top: auto;
