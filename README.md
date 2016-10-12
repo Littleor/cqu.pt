@@ -10,7 +10,7 @@
   ├── README.md
   ├── nginx_conf     // 两次代理, 绕过80端口
   │    ├── host.congm.in.conf    // nginx配置文件 (校内旧电脑)
-  │    └── cqupt.congm.in.conf   // nginx配置文件 (阿里云主机)
+  │    └── cqupt.congm.in.conf   // nginx配置文件 (云主机)
   ├── common
   │    └── ...      // 导航侧栏脚本及样式 (通过nginx注入) (打包后)
   ├── static

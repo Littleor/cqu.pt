@@ -28,12 +28,12 @@ var _hmt = _hmt || [];
     var all_a = document.getElementsByTagName("a");
     for(var i = 0; i < all_a.length; i++){
         var url_array = all_a[i].href.split("/");
-        if(url_array.length > 2 && all_a[i].href.indexOf("//") != -1 && url_array[2].indexOf("cqupt.congm.in") == -1){
+        if(url_array.length > 2 && all_a[i].href.indexOf("//") != -1 && url_array[2].indexOf("cqupt.congm.in") == -1 && url_array[2].indexOf("host.congm.in") == -1){
             if(url_array[2].indexOf(":") == -1){
                 url_array[2] += ".cqupt.congm.in";
             }else{
                 var host_array = url_array[2].split(":");
-                url_array[2] = host_array[0] + ".cqupt.congm.in" + ":" + host_array[1];
+                url_array[2] = host_array[0] + ".cqupt.congm.in";
             }
             all_a[i].href = url_array.join('/');
         }
@@ -43,12 +43,12 @@ var _hmt = _hmt || [];
     var img_a = document.getElementsByTagName("img");
     for(var i = 0; i < img_a.length; i++){
         var url_array = img_a[i].src.split("/");
-        if(url_array.length > 2 && img_a[i].src.indexOf("//") != -1 && url_array[2].indexOf("cqupt.congm.in") == -1){
+        if(url_array.length > 2 && img_a[i].src.indexOf("//") != -1 && url_array[2].indexOf("cqupt.congm.in") == -1 && url_array[2].indexOf("host.congm.in") == -1){
             if(url_array[2].indexOf(":") == -1){
                 url_array[2] += ".cqupt.congm.in";
             }else{
                 var host_array = url_array[2].split(":");
-                url_array[2] = host_array[0] + ".cqupt.congm.in" + ":" + host_array[1];
+                url_array[2] = host_array[0] + ".cqupt.congm.in";
             }
             img_a[i].src = url_array.join('/');
         }
