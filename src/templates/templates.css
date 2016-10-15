@@ -133,6 +133,7 @@ body._cqupt-body{
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
+    color: #fff;
 }
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item ._cqupt-iconfont{
     width: 24px;
@@ -141,7 +142,6 @@ body._cqupt-body{
     line-height: 28px;
     margin: 0;
     padding: 0;
-    color: #fff;
 }
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item>a{
     color: #fff;
