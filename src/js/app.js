@@ -248,7 +248,7 @@ function addListenVar() {
                 });
             }
         };
-        var warn_text_array = ['由于内网外入服务器成本过高，近期将做出一些变动，请加群了解最新动态。', _cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
+        var warn_text_array = ['由于服务器成本等原因，近期内网外入将做出一些变动，为了方便请加群保持了解最新动态。', _cqupt_inner_user.xm + '同学，您好。欢迎使用内网外入！'];
         warnBox.down(warn_text_array);
     }
 }
