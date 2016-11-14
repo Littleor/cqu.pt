@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack -p",
     "clean": "rm index.html && rm -rf static && rm -rf common",
-    "rebuild": "npm run clean && npm run build"
+    "rebuild": "npm run clean && npm run build",
+    "push": "git add . && git commit -m 'update' && git push"
   },
   "repository": {
     "type": "git",
