@@ -5,7 +5,7 @@ require('./tagcloud.min');
 require('./duosuo_embed.min');
 // templates
 var sideBoxTemplates = require('../templates/templates.html');
-document.body.insertAdjacentHTML("afterbegin", sideBoxTemplates);
+document.body.insertAdjacentHTML("beforeend", sideBoxTemplates);
 require('../templates/templates');
 
 $(function() {
