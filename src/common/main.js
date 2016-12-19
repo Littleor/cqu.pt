@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
     css.onload = function(){
         var templates = require('../templates/templates.html');
         if(self == top){
-            document.body.insertAdjacentHTML("afterbegin", templates);
+            document.body.insertAdjacentHTML("beforeend", templates);
             document.body.classList.add('_cqupt-body');
             require('../templates/templates');
         }
