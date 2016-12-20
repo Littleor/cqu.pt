@@ -87,8 +87,8 @@ window.duoshuoQuery = {short_name:"cqupt-inner"};
 /*googlead*/
 (function() {
     var google = document.createElement("script");
-    google.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
     google.async = "true";
+    google.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
     if(self == top){
         document.body.appendChild(google);
     }

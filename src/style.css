@@ -384,6 +384,12 @@ input[value]{
 		font-size: 18px;
 		line-height: 24px;
 	}
+	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item ._cqupt-side-bar-img{
+		width: 16px;
+		height: 16px;
+		margin-left: -7px;
+		margin-top: -8px;
+	}
 	#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover ._cqupt-side-bar-tip{
 		right: 35px;
 	}
