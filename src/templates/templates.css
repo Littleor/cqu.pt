@@ -175,6 +175,8 @@ body._cqupt-body{
     outline: none;
 }
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item a{
+    text-decoration: none;
+    outline: none;
     color: #fff;
 }
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item ._cqupt-iconfont{
