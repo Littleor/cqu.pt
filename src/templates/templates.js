@@ -167,6 +167,12 @@
         html += '</tbody>';
         document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
     })(require('../../json/donate'));
+    // 广告
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9908918414837596",
+        enable_page_level_ads: true
+    });
 })();
 
 function _cqupt_inner_user_show() {
