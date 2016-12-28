@@ -23,12 +23,11 @@
     }
     var bcs = document.querySelector('body').children, maxHeight = 0;
     for(var i = 0; i < bcs.length; i++){
-        console.log(bcs[i], outerHeight(bcs[i]));
         if(maxHeight < outerHeight(bcs[i])){
             maxHeight = outerHeight(bcs[i]);
         }
     }
-    document.querySelector('body').style.minHeight = maxHeight;
+    document.querySelector('body').style.minHeight = maxHeight + 'px';
 })();
 // localStorage
 (function(){

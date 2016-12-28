@@ -47,23 +47,8 @@
     text-align: center;
     background: #fff8e2;
 }
-html{
-    height: 100% !important;
-}
-body{
-    position: relative;
-    min-height: 100% !important;
-}
 body._cqupt-body{
     padding-right: 45px !important;
-}
-body._cqupt-body:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -330px;
-    height: 330px;
 }
 ._cqupt-show{
     display: block !important;
@@ -483,14 +468,7 @@ body._cqupt-body:after{
 /*广告*/
 #_cqupt-adbox{
     display: none;
-    position: absolute;
-    bottom: -300px;
-    left: 0;
-    right: 0;
     height: 270px;
     text-align: center;
     padding-top: 30px;
-}
-body._cqupt-body #_cqupt-adbox{
-    right: 45px;
 }
