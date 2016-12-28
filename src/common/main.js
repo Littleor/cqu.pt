@@ -91,10 +91,14 @@ window.duoshuoQuery = {short_name:"cqupt-inner"};
     google.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
     if(self == top){
         document.body.appendChild(google);
-        (adsbygoogle = window.adsbygoogle || []).push({}).push({
-            google_ad_client: "ca-pub-9908918414837596",
-            enable_page_level_ads: true
-        });
+        google.onload = function() {
+            console.log('test');
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-9908918414837596",
+                enable_page_level_ads: true
+            });
+        }
     }
 })();
 
