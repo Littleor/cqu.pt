@@ -7,7 +7,11 @@
         document.body.appendChild(google);
     }
 })();
-// 广告
+// 展示广告
+(adsbygoogle = window.adsbygoogle || []).push();
+// 文字广告
+(adsbygoogle = window.adsbygoogle || []).push();
+// 移动端网页级广告
 (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-9908918414837596",
     enable_page_level_ads: true
