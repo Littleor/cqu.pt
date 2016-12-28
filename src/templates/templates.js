@@ -15,6 +15,20 @@
         google_ad_client: "ca-pub-9908918414837596",
         enable_page_level_ads: true
     });
+    function outerHeight(el) {
+        var height = el.offsetHeight;
+        var style = getComputedStyle(el);
+        height += parseInt(style.marginTop) + parseInt(style.marginBottom);
+        return height;
+    }
+    var bcs = document.querySelector('body').children, maxHeight = 0;
+    for(var i = 0; i < bcs.length; i++){
+        console.log(bcs[i], outerHeight(bcs[i]));
+        if(maxHeight < outerHeight(bcs[i])){
+            maxHeight = outerHeight(bcs[i]);
+        }
+    }
+    document.querySelector('body').style.minHeight = maxHeight;
 })();
 // localStorage
 (function(){
