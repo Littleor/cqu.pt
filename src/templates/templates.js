@@ -1,3 +1,19 @@
+/*广告*/
+(function() {
+    var google = document.createElement("script");
+    google.async = "true";
+    google.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    if(self == top){
+        document.body.appendChild(google);
+    }
+})();
+// 广告
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9908918414837596",
+    enable_page_level_ads: true
+});
 // localStorage
 (function(){
     var extend = function(out){
@@ -167,13 +183,6 @@
         html += '</tbody>';
         document.querySelector("._cqupt-donate-list").insertAdjacentHTML("afterbegin", html);
     })(require('../../json/donate'));
-    // 广告
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-9908918414837596",
-        enable_page_level_ads: true
-    });
 })();
 
 function _cqupt_inner_user_show() {

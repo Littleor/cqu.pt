@@ -84,13 +84,4 @@ window.duoshuoQuery = {short_name:"cqupt-inner"};
         document.body.appendChild(duosuo);
     }
 })();
-/*googlead*/
-(function() {
-    var google = document.createElement("script");
-    google.async = "true";
-    google.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    if(self == top){
-        document.body.appendChild(google);
-    }
-})();
 
