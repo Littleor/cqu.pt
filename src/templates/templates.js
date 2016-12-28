@@ -28,6 +28,9 @@
         }
     }
     document.querySelector('body').style.minHeight = maxHeight + 'px';
+    document.querySelector('#_cqupt-adbox-close').onclick = function(){
+        document.querySelector('#_cqupt-adbox').style.display = 'none';
+    };
 })();
 // localStorage
 (function(){

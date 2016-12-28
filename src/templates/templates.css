@@ -478,4 +478,5 @@ body._cqupt-body{
     position: absolute;
     top: 0;
     opacity: .25;
+    cursor: pointer;
 }
