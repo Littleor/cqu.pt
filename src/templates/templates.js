@@ -8,8 +8,6 @@
     }
 })();
 // 广告
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "ca-pub-9908918414837596",
     enable_page_level_ads: true
