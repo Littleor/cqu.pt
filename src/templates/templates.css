@@ -324,7 +324,8 @@ body._cqupt-body{
     text-indent: 1em;
     margin: 0;
     padding: 0;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+    word-break: break-all;
 }
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd h2,
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd h3 {
