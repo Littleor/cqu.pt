@@ -6,9 +6,9 @@
     if(self == top){
         document.body.appendChild(google);
     }
-    // 展示广告
+    // 3个内容广告
     (adsbygoogle = window.adsbygoogle || []).push({});
-    // 文字广告
+    (adsbygoogle = window.adsbygoogle || []).push({});
     (adsbygoogle = window.adsbygoogle || []).push({});
     // 移动端网页级广告
     (adsbygoogle = window.adsbygoogle || []).push({
