@@ -6,16 +6,16 @@
     if(self == top){
         document.body.appendChild(google);
     }
+    // 展示广告
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    // 文字广告
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    // 移动端网页级广告
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-9908918414837596",
+        enable_page_level_ads: true
+    });
 })();
-// 展示广告
-(adsbygoogle = window.adsbygoogle || []).push();
-// 文字广告
-(adsbygoogle = window.adsbygoogle || []).push();
-// 移动端网页级广告
-(adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-9908918414837596",
-    enable_page_level_ads: true
-});
 // localStorage
 (function(){
     var extend = function(out){
