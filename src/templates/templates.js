@@ -6,10 +6,13 @@
     if(self == top){
         document.body.appendChild(google);
     }
-    // 3个内容广告
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    var ibody = document.querySelector('body'), adbox = document.querySelector('#_cqupt-adbox');
+    if(getComputedStyle(adbox, null).display != 'none'){
+        // 3个内容广告
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    }
     // 移动端网页级广告
     (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-9908918414837596",
@@ -22,7 +25,6 @@
         return height;
     }
     var wHeight = window.innerHeight, adHeight = outerHeight(document.querySelector('#_cqupt-adbox')), maxHeight = 0;
-    var ibody = document.querySelector('body'), adbox = document.querySelector('#_cqupt-adbox');
     var bcs = ibody.children;
     for(var i = 0; i < bcs.length; i++){
         if(bcs[i].id.indexOf('_cqupt') === -1 && maxHeight < outerHeight(bcs[i])){
