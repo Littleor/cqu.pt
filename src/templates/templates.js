@@ -21,8 +21,7 @@
         height += parseInt(style.marginTop) + parseInt(style.marginBottom);
         return height;
     }
-    var wHeight = window.innerHeight, adHeight = outerHeight(document.querySelector('#_cqupt-adbox')), maxHeight = 0;
-    var bcs = document.querySelector('body').children;
+    var bcs = document.querySelector('body').children, maxHeight = 0;
     for(var i = 0; i < bcs.length; i++){
         if(bcs[i].id.indexOf('_cqupt') === -1 && maxHeight < outerHeight(bcs[i])){
             maxHeight = outerHeight(bcs[i]);
@@ -30,7 +29,6 @@
     }
     document.querySelector('body').style.minHeight = maxHeight + 'px';
     document.querySelector('#_cqupt-adbox').style.top = maxHeight+'px';
-    // document.querySelector('#_cqupt-adbox').style.top = (wHeight >= adHeight + maxHeight) ? (wHeight-maxHeight)+'px' : -adHeight+'px';
     document.querySelector('#_cqupt-adbox-close').onclick = function(){
         document.querySelector('#_cqupt-adbox').style.display = 'none';
     };
