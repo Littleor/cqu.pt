@@ -472,6 +472,7 @@ body._cqupt-body{
 #_cqupt-adbox{
     position: absolute;
     top: 100%;
+    bottom: auto;
     left: 0;
     right: 0;
     text-align: center;
