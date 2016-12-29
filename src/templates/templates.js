@@ -28,8 +28,12 @@
             maxHeight = outerHeight(bcs[i]);
         }
     }
-    document.querySelector('body').style.minHeight = maxHeight + 'px';
+    if(maxHeight){
+        document.querySelector('body').style.minHeight = maxHeight + 'px';
+    }
     console.log(adHeight);
+    console.log(adbox.innerHTML);
+
     if(wHeight >= adHeight + maxHeight) {
         adbox.style.top = 'auto';
         adbox.style.bottom = '0';
