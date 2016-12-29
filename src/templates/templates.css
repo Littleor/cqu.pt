@@ -47,8 +47,12 @@
     text-align: center;
     background: #fff8e2;
 }
+html, body{
+    min-width: 100%;
+    min-height: 100%;
+}
 body{
-    position: relative;
+    position: absolute !important;
 }
 body._cqupt-body{
     padding-right: 45px !important;
@@ -472,9 +476,9 @@ body._cqupt-body{
 #_cqupt-adbox{
     position: absolute;
     top: 100%;
-    bottom: auto;
     left: 0;
     right: 0;
+    height: 270px;
     text-align: center;
     padding: 30px 0;
 }
