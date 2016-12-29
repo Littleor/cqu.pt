@@ -31,7 +31,7 @@
             maxHeight = outerHeight(bcs[i]);
         }
     }
-    if(maxHeight && maxHeight !== wHeight){
+    if(maxHeight){
         ibody.style.minHeight = maxHeight + 'px';
     }
     if(wHeight > adHeight + maxHeight) {
