@@ -31,11 +31,10 @@
             maxHeight = outerHeight(bcs[i]);
         }
     }
-    if(maxHeight){
+    if(maxHeight && maxHeight !== wHeight){
         ibody.style.minHeight = maxHeight + 'px';
     }
-
-    if(wHeight >= adHeight + maxHeight) {
+    if(wHeight > adHeight + maxHeight) {
         adbox.style.top = (wHeight-adHeight) + 'px';
     }
     document.querySelector('#_cqupt-adbox-close').onclick = function(){
