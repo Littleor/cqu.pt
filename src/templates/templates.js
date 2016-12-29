@@ -29,7 +29,8 @@
         }
     }
     document.querySelector('body').style.minHeight = maxHeight + 'px';
-    document.querySelector('#_cqupt-adbox').style.bottom = (wHeight >= adHeight + maxHeight) ? 0 : -adHeight +'px';
+    document.querySelector('#_cqupt-adbox').style.top = maxHeight+'px';
+    // document.querySelector('#_cqupt-adbox').style.top = (wHeight >= adHeight + maxHeight) ? (wHeight-maxHeight)+'px' : -adHeight+'px';
     document.querySelector('#_cqupt-adbox-close').onclick = function(){
         document.querySelector('#_cqupt-adbox').style.display = 'none';
     };

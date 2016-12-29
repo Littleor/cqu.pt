@@ -471,10 +471,9 @@ body._cqupt-body{
 /*广告*/
 #_cqupt-adbox{
     position: absolute;
-    bottom: -330px;
+    top: 100%;
     left: 0;
     right: 0;
-    height: 270px;
     text-align: center;
     padding: 30px 0;
 }
