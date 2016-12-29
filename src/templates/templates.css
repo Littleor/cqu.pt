@@ -479,7 +479,7 @@ body._cqupt-body{
     right: 0;
     height: 270px;
     text-align: center;
-    padding: 50px 0 30px;
+    padding: 50px 0 20px;
 }
 body._cqupt-body #_cqupt-adbox{
     right: 45px;
@@ -487,7 +487,7 @@ body._cqupt-body #_cqupt-adbox{
 #_cqupt-adbox-close{
     font-size: 10px;
     position: absolute;
-    top: 10px;
+    top: 30px;
     opacity: .25;
     cursor: pointer;
 }
