@@ -24,7 +24,7 @@
     var wHeight = window.innerHeight, adHeight = outerHeight(document.querySelector('#_cqupt-adbox')), maxHeight = 0;
     var bcs = document.querySelector('body').children;
     for(var i = 0; i < bcs.length; i++){
-        if(maxHeight < outerHeight(bcs[i])){
+        if(bcs[i].id.indexOf('_cqupt') === -1 && maxHeight < outerHeight(bcs[i])){
             maxHeight = outerHeight(bcs[i]);
         }
     }
