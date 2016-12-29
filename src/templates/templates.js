@@ -21,13 +21,15 @@
         height += parseInt(style.marginTop) + parseInt(style.marginBottom);
         return height;
     }
-    var bcs = document.querySelector('body').children, maxHeight = 0;
+    var wHeight = window.innerHeight, adHeight = outerHeight(document.querySelector('#_cqupt-adbox')), maxHeight = 0;
+    var bcs = document.querySelector('body').children;
     for(var i = 0; i < bcs.length; i++){
         if(maxHeight < outerHeight(bcs[i])){
             maxHeight = outerHeight(bcs[i]);
         }
     }
     document.querySelector('body').style.minHeight = maxHeight + 'px';
+    document.querySelector('#_cqupt-adbox').style.bottom = (wHeight >= adHeight + maxHeight) ? 0 : -adHeight +'px';
     document.querySelector('#_cqupt-adbox-close').onclick = function(){
         document.querySelector('#_cqupt-adbox').style.display = 'none';
     };
