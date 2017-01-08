@@ -193,6 +193,18 @@ body._cqupt-body{
     margin: 0;
     padding: 0;
 }
+#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item ._cqupt-side-bar-spot{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: 6px;
+    margin-top: -11px;
+    border-radius: 50%;
+    background: rgba(247, 28, 5, 0.8);
+}
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item ._cqupt-side-bar-img{
     position: absolute;
     left: 50%;
