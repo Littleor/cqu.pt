@@ -61,7 +61,7 @@ $(function() {
     var statusQuery = function(){
         status.reset();
         var query = $.ajax({
-            url: "//host.congm.in/status.json?" + new Date().getTime(),
+            url: "//cqupt.congm.in/status.php?" + new Date().getTime(),
             dataType: "json",
             timeout : 10000,
             success: function(data){
