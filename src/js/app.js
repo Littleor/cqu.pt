@@ -64,10 +64,11 @@ $(function() {
             url: "//cqupt.congm.in/status.php?" + new Date().getTime(),
             timeout : 10000,
             success: function(data){
-                if(!data){
-                    status.off();
-                }else{
+                data = parseInt(data);
+                if(data > 0){
                     status.on(data);
+                }else{
+                    status.off();
                 }
             },
             complete: function(XMLHttpRequest){

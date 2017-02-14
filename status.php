@@ -17,7 +17,7 @@ curl_exec( $ch );
 
 $pings = curl_getinfo( $ch, CURLINFO_CONNECT_TIME );
 
-echo floor( $pings * 1000 );
+echo $pings * 1000;
 
 curl_close( $ch );
 
