@@ -2,18 +2,23 @@
 
 $url = 'http://cqu.pt';
 
-$curl = curl_init();
+$ch = curl_init();
 
-curl_setopt( $curl, CURLOPT_URL, $url );
-curl_setopt( $curl, CURLOPT_HEADER, false );
-curl_setopt( $curl, CURLOPT_NOBODY, true);
-curl_setopt( $curl, CURLOPT_TIMEOUT, 8 );  //超时8s
-curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+$options = array(
+    CURLOPT_URL => $url,
+    CURLOPT_HEADER => false,
+    CURLOPT_NOBODY => true,
+    CURLOPT_TIMEOUT => 8
+);
 
-$res = curl_exec ( $curl );
+curl_setopt_array( $ch, $options );
 
-echo $res;
+curl_exec( $ch );
 
-curl_close( $curl );
+$pings = curl_getinfo( $ch, CURLINFO_CONNECT_TIME );
+
+echo $pings * 1000;
+
+curl_close( $ch );
 
 ?>

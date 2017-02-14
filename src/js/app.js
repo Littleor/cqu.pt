@@ -48,9 +48,9 @@ $(function() {
             $status.find("i").attr("class", "reset");
             $status.find("span").text("正在查询中");
         },
-        on: function(){
+        on: function(data){
             $status.find("i").attr("class", "on");
-            $status.find("span").text("服务器在线");
+            $status.find("span").text("服务器在线 " + data + "ms");
         },
         off: function(){
             $status.find("i").attr("class", "off");
@@ -62,13 +62,12 @@ $(function() {
         status.reset();
         var query = $.ajax({
             url: "//cqupt.congm.in/status.php?" + new Date().getTime(),
-            dataType: "json",
-            timeout : 10000,
+            timeout : 8000,
             success: function(data){
-                if(data.status == 'ok'){
-                    status.on();
-                }else{
+                if(!data){
                     status.off();
+                }else{
+                    status.on(data);
                 }
             },
             complete: function(XMLHttpRequest){
