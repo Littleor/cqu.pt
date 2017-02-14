@@ -62,7 +62,7 @@ $(function() {
         status.reset();
         var query = $.ajax({
             url: "//cqupt.congm.in/status.php?" + new Date().getTime(),
-            timeout : 8000,
+            timeout : 10000,
             success: function(data){
                 if(!data){
                     status.off();
