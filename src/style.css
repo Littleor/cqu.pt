@@ -184,9 +184,9 @@ input[value]{
 	font-size: 14px;
 	text-align: center;
 	color: gray;
-	-moz-opacity: 0.25;
-	opacity: .25;
-	filter: alpha(opacity=25);
+	-moz-opacity: 0.5;
+	opacity: .5;
+	filter: alpha(opacity=50);
 	cursor: pointer;
 }
 #status{

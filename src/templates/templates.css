@@ -67,7 +67,7 @@ body._cqupt-body{
     padding: 0 4px 0 5px;
     border: 1px solid #42b983;
     border-radius: 3px;
-    color: #42b983;
+    color: #42b983 !important;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
@@ -78,6 +78,7 @@ body._cqupt-body{
     color: #fff;
     background-color: #42b983;
 }
+
 #_cqupt-side-box ._cqupt-label-sm{
     padding: 0 4px;
     font-size: 12px;
@@ -338,7 +339,7 @@ body._cqupt-body{
 }
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd p{
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     text-indent: 1em;
     margin: 0;
     padding: 0;
@@ -348,7 +349,7 @@ body._cqupt-body{
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd h2,
 #_cqupt-side-box ._cqupt-content ._cqupt-content-bd h3 {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     text-indent: 0;
     margin: 0;
     padding: 0;

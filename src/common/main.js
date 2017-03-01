@@ -4,15 +4,6 @@
 require('./main.css');
 
 /* 插入js */
-/* 百度统计 */
-var _hmt = _hmt || [];
-(function() {
-    var baidu = document.createElement("script");
-    baidu.src = "//hm.baidu.com/hm.js?d57aa305b1d347caa2d89b63bdcd298c";
-    if(self == top){
-        document.body.appendChild(baidu);
-    }
-})();
 /* CNZZ统计 */
 (function() {
     var cnzz = document.createElement("script");

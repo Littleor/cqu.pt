@@ -13,8 +13,7 @@ module.exports = {
         // 第三方库modules单独打包, 填入modules名即可
         lib: ['./src/js/jquery.min', './src/js/tagcloud.min'],
         'duosuo_embed.min': ['./src/js/duosuo_embed.min'],
-        '../common/main': ['./src/common/main'],
-        '../common/storage-iframe': ['./src/templates/storage-iframe']
+        '../common/main': ['./src/common/main']
     },
     output: {
         // 输出
@@ -40,12 +39,12 @@ module.exports = {
             // script插入的标签
             inject: 'body'
         }),
-        // storage-iframe.html
+        // 输出test.html
         new HtmlPlugin({
             // html模板文件地址
-            template: './src/templates/storage-iframe.html',
+            template: './src/403.html',
             // 输出路径及文件名
-            filename: '../common/storage-iframe.html',
+            filename: '../403.html',
             // chunks表示要引用entry里面的入口
             chunks: [],
             // script插入的标签
