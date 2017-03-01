@@ -12,6 +12,10 @@
             align-items: center;
             justify-content: center;
         }
+        .main-box .host-name {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
         .main-box .error-403 {
             font-size: 22px;
             line-height: 1.75;
@@ -51,9 +55,9 @@
 <script src="//congm.in/tongji/cqupt.congm.in.js"></script>
 <script>
     (function(){
-        var hash = location.has,
+        var hash = location.hash,
             hostname = hash.split('#')[1];
-        document.querySelector('.host-name').text(hostname);
+        document.querySelector('.host-name').innerHTML = '[ <a href="http://'+hostname+'">'+hostname+'</a> ]';
     })();
 </script>
 </body>
