@@ -21,7 +21,7 @@
             border-bottom: 1px dashed #fff;
         }
         .main-box .return-btn {
-            margin-top: 30px;
+            margin: 30px;
             border: 1px solid #fff;
             font-size: 16px;
             padding: 6px 14px;
@@ -39,6 +39,7 @@
 <div class="black_overlay"></div>
 <div class="main-box">
     <div class="content">
+        <p class="host-name"></p>
         <p class="error-403">为了保证内网安全及隐私，<br>该网站已被列入内网外入<span class="black-list">保护名单</span>，无法再通过外网访问。</p>
         <a class="return-btn" href="//cqupt.congm.in">返回</a>
     </div>
@@ -48,5 +49,12 @@
 </footer>
 <!--CNZZ统计-->
 <script src="//congm.in/tongji/cqupt.congm.in.js"></script>
+<script>
+    (function(){
+        var hash = location.has,
+            hostname = hash.split('#')[1];
+        document.querySelector('.host-name').text('hostname');
+    })();
+</script>
 </body>
 </html>
