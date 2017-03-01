@@ -75,7 +75,7 @@ body._cqupt-body{
 }
 #_cqupt-side-box ._cqupt-label-o{
     border: none;
-    color: #fff;
+    color: #fff !important;
     background-color: #42b983;
 }
 
