@@ -42,6 +42,8 @@
     };
 })();
 (function(){
+    /* 更改标题 */
+    document.title = '【内网外入】 ' + document.title;
     /* side-box */
     var title_btn = document.querySelector("#_cqupt-title"),
         discuss_btn = document.querySelector("[data-target='#_cqupt-duosuo']"),
