@@ -44,6 +44,8 @@
 (function(){
     /* 更改标题 */
     if(location.hostname !== 'cqupt.congm.in') { document.title = '【内网外入】 ' + document.title; }
+    /* 多说 */
+    duoshuoQuery = { short_name: "cqupt-inner" };
     /* side-box */
     var title_btn = document.querySelector("#_cqupt-title"),
         discuss_btn = document.querySelector("[data-target='#_cqupt-duosuo']"),
