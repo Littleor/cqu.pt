@@ -492,20 +492,19 @@ body._cqupt-body{
     right: 0;
     height: 270px;
     text-align: center;
-    padding: 40px 0 20px;
+    padding: 35px 0 20px;
     margin-top: 30px;
-    background: rgba(22,22,22,0.22);
+    background: rgba(234,234,234,.8)
 }
 body._cqupt-body #_cqupt-adbox{
     right: 45px;
 }
 #_cqupt-adbox-close{
-    font-size: 14px;
-    font-weight: 900;
+    font-size: 12px;
     position: absolute;
     top: 10px;
     opacity: .8;
     cursor: pointer;
-    color: #fff;
+    color: #888;
     font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
 }
