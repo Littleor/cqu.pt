@@ -492,15 +492,18 @@ body._cqupt-body{
     right: 0;
     height: 270px;
     text-align: center;
-    padding: 50px 0 20px;
+    padding: 40px 0 20px;
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.1);
 }
 body._cqupt-body #_cqupt-adbox{
     right: 45px;
 }
 #_cqupt-adbox-close{
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: 900;
     position: absolute;
-    top: 30px;
-    opacity: .25;
+    top: 10px;
+    opacity: .5;
     cursor: pointer;
 }
