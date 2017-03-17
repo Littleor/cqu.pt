@@ -494,7 +494,7 @@ body._cqupt-body{
     text-align: center;
     padding: 40px 0 20px;
     margin-top: 30px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(22,22,22,0.22);
 }
 body._cqupt-body #_cqupt-adbox{
     right: 45px;
@@ -504,6 +504,8 @@ body._cqupt-body #_cqupt-adbox{
     font-weight: 900;
     position: absolute;
     top: 10px;
-    opacity: .5;
+    opacity: .8;
     cursor: pointer;
+    color: #fff;
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
 }
