@@ -4,13 +4,13 @@
 require('./main.css');
 
 /* 判断是否为http，cdn是否可用 */
-var _hostname = (location.protocol !== 'https:') ? 'http://cdn.cqupt.congm.in' : '//cqupt.congm.in';
+var _hostname = (location.protocol !== 'https:') ? '//cdn.cqupt.congm.in' : '//cqupt.congm.in';
 
 /* 插入js */
 /* CNZZ统计 */
 (function() {
     var cnzz = document.createElement("script");
-    cnzz.src = "//congm.in/tongji/cqupt.congm.in.js";
+    cnzz.src = "//cdn.congm.in/tongji/cqupt.congm.in.js";
     cnzz.charset = "utf-8";
     if(self == top){
         document.body.appendChild(cnzz);
