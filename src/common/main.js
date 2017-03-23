@@ -3,6 +3,9 @@
  * */
 require('./main.css');
 
+/* 判断是否为http，cdn是否可用 */
+var _hostname = (location.protocol !== 'https:') ? '//cdn.cqupt.congm.in' : '//cqupt.congm.in';
+
 /* 插入js */
 /* CNZZ统计 */
 (function() {
@@ -50,7 +53,7 @@ require('./main.css');
     /* 插入css */
     var css = document.createElement("link");
     css.rel = "stylesheet";
-    css.href = "//cqupt.congm.in/common/main.css?" + new Date().getTime();
+    css.href = _hostname + "/common/main.css";
     if(self == top){
         document.head.appendChild(css);
     }
@@ -69,7 +72,7 @@ require('./main.css');
 window.duoshuoQuery = {short_name:"cqupt-inner"};
 (function() {
     var duosuo = document.createElement("script");
-    duosuo.src = "//cqupt.congm.in/static/duosuo_embed.min.js";
+    duosuo.src = _hostname + "/static/duosuo_embed.min.js";
     duosuo.charset = "utf-8";
     if(self == top){
         document.body.appendChild(duosuo);
