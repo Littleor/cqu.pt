@@ -295,15 +295,6 @@ input[value]{
 #_cqupt-adbox {
 	display: none !important;
 }
-#_cqupt-adbox ._cqupt-adbox-label {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 3px 7px;
-	background-color: #42b983;
-	color: #fff;
-	border-bottom-right-radius: 3px;
-}
 @media screen and (max-width: 600px){
 	.newimg{
 		width: 100px;

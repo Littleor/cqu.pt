@@ -509,3 +509,24 @@ body._cqupt-body #_cqupt-adbox{
     color: #999;
     font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
 }
+#_cqupt-adbox ._cqupt-adbox-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3px 7px;
+    background-color: #42b983;
+    color: #fff;
+    border-bottom-right-radius: 3px;
+}
+
+@media screen and (max-height: 500px){
+    #_cqupt-adbox ._cqupt-side-bar-top ._cqupt-side-bar-item:last-child {
+        display: none;
+    }
+    #_cqupt-adbox ._cqupt-side-bar-bottom ._cqupt-side-bar-item {
+        display: none;
+    }
+    #_cqupt-adbox ._cqupt-side-bar-bottom ._cqupt-side-bar-item:first-child {
+        display: block;
+    }
+}
