@@ -496,6 +496,7 @@ body._cqupt-body{
     margin-top: 30px;
     background: rgba(240,240,240,.85);
     opacity: .98;
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
 }
 body._cqupt-body #_cqupt-adbox{
     right: 45px;
@@ -507,9 +508,9 @@ body._cqupt-body #_cqupt-adbox{
     opacity: .75;
     cursor: pointer;
     color: #999;
-    font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
 }
 #_cqupt-adbox ._cqupt-adbox-label {
+    font-size: 12px;
     position: absolute;
     top: 0;
     left: 0;
