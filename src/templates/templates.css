@@ -504,8 +504,8 @@ body._cqupt-body #_cqupt-adbox{
 #_cqupt-adbox-close {
     font-size: 12px;
     position: absolute;
-    top: 10px;
-    right: 11px;
+    top: 8px;
+    right: 10px;
     opacity: .75;
     cursor: pointer;
     color: #999;
@@ -530,13 +530,13 @@ body._cqupt-body #_cqupt-adbox{
 }
 
 @media screen and (max-height: 500px){
-    #_cqupt-adbox ._cqupt-side-bar-top ._cqupt-side-bar-item:last-child {
+    #_cqupt-side-box ._cqupt-side-bar-top ._cqupt-side-bar-item:last-child {
         display: none;
     }
-    #_cqupt-adbox ._cqupt-side-bar-bottom ._cqupt-side-bar-item {
+    #_cqupt-side-box ._cqupt-side-bar-bottom ._cqupt-side-bar-item {
         display: none;
     }
-    #_cqupt-adbox ._cqupt-side-bar-bottom ._cqupt-side-bar-item:first-child {
+    #_cqupt-side-box ._cqupt-side-bar-bottom ._cqupt-side-bar-item:first-child {
         display: block;
     }
 }
