@@ -1,6 +1,7 @@
 <?php
 
-$url = 'http://jwzx.cqupt.congm.in';
+$host = 'jwzx.cqupt.congm.in';
+$url = 'http://' . $host;
 
 $ch = curl_init();
 
@@ -15,10 +16,10 @@ curl_setopt_array( $ch, $options );
 
 curl_exec( $ch );
 
-$code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+$ip = gethostbyname( $host );
 $ping = curl_getinfo( $ch, CURLINFO_CONNECT_TIME );
 
-echo json_encode( [ $code, ceil($ping * 1000) ] );
+echo json_encode( [ $ip, ceil($ping * 1000) ] );
 
 curl_close( $ch );
 

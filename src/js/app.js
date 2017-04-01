@@ -72,14 +72,18 @@ $(function() {
             timeout : 10000,
             success: function(data){
                 data = JSON.parse(data);
-                var code = parseInt(data[0]),
+                var ip = data[0],
                     ping = parseInt(data[1]);
-                if(code == 200) {
-                    status.on(ping);
-                }else if(code == 302){
-                    status.on(ping, '已启用备用路线');
-                }else{
+                if(ping <= 0){
                     status.off();
+                }else{
+                    if(ip == '202.202.43.139') {
+                        status.on(ping);
+                    }else if(ip == '121.42.46.40'){
+                        status.on(ping, '已启用备用路线');
+                    }else{
+                        status.unknown();
+                    }
                 }
             },
             complete: function(XMLHttpRequest){
