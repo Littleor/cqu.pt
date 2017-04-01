@@ -15,9 +15,10 @@ curl_setopt_array( $ch, $options );
 
 curl_exec( $ch );
 
-$pings = curl_getinfo( $ch, CURLINFO_CONNECT_TIME );
+$code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+$ping = curl_getinfo( $ch, CURLINFO_CONNECT_TIME );
 
-echo $pings * 1000;
+echo json_encode( [ $code, ceil($ping * 1000) ] );
 
 curl_close( $ch );
 

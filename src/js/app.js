@@ -48,16 +48,20 @@ $(function() {
             $status.find("i").attr("class", "reset");
             $status.find("span").text("正在查询中");
         },
-        on: function(data){
+        on: function(data, text){
             $status.find("i").attr("class", "on");
-            $status.find("span").text("服务器在线 " + (data ? (data + "ms") : ""));
+            if(!text){
+                $status.find("span").text("服务器在线 " + data + "ms");
+            }else{
+                $status.find("span").text(text);
+            }
         },
         off: function(){
             $status.find("i").attr("class", "off");
             $status.find("span").text("服务器超时");
         },
-        hide: function(){
-          $status.remove();
+        unknown: function(){
+          $status.find("span").text("未知");
         }
     };
     //服务器状态
@@ -67,11 +71,15 @@ $(function() {
             url: "//cqupt.congm.in/status.php?" + new Date().getTime(),
             timeout : 10000,
             success: function(data){
-                data = parseInt(data);
-                if(data > 0){
-                    status.on(data);
+                data = JSON.parse(data);
+                var code = parseInt(data[0]),
+                    ping = parseInt(data[1]);
+                if(code == 200) {
+                    status.on(ping);
+                }else if(code == 302){
+                    status.on(ping, '备用路线');
                 }else{
-                    status.hide();
+                    status.unknown();
                 }
             },
             complete: function(XMLHttpRequest){
