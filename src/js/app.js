@@ -50,7 +50,7 @@ $(function() {
         },
         on: function(data){
             $status.find("i").attr("class", "on");
-            $status.find("span").text("服务器在线 " + data + "ms");
+            $status.find("span").text("服务器在线 " + data ? (data + "ms") : "");
         },
         off: function(){
             $status.find("i").attr("class", "off");
@@ -68,7 +68,7 @@ $(function() {
                 if(data > 0){
                     status.on(data);
                 }else{
-                    status.off();
+                    status.on();
                 }
             },
             complete: function(XMLHttpRequest){
