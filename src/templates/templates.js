@@ -46,7 +46,7 @@
     if(location.hostname !== 'cqupt.congm.in') { document.title = '【内网外入】 ' + document.title; }
     if(location.port == '88') {
         var route = document.querySelector("#_cqupt-route");
-        route.innerHTML = '内网外入<br>备用路线';
+        route.innerHTML = '您正在使用<br>内网外入备用路线';
         route.style.display = 'inline-block';
         route.addEventListener('click', function(){
             route.style.display = 'none';
