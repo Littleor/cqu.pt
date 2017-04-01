@@ -55,6 +55,9 @@ $(function() {
         off: function(){
             $status.find("i").attr("class", "off");
             $status.find("span").text("服务器超时");
+        },
+        hide: function(){
+          $status.remove();
         }
     };
     //服务器状态
@@ -68,7 +71,7 @@ $(function() {
                 if(data > 0){
                     status.on(data);
                 }else{
-                    status.on();
+                    status.hide();
                 }
             },
             complete: function(XMLHttpRequest){
