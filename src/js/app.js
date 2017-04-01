@@ -77,15 +77,15 @@ $(function() {
                 if(code == 200) {
                     status.on(ping);
                 }else if(code == 302){
-                    status.on(ping, '备用路线已启用');
+                    status.on(ping, '已启用备用路线');
                 }else{
-                    status.unknown();
+                    status.off();
                 }
             },
             complete: function(XMLHttpRequest){
                 if(XMLHttpRequest.status != 200){
                     query.abort();
-                    status.off();
+                    status.unknown();
                 }
             }
         });
