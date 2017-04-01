@@ -267,6 +267,9 @@ input[value]{
 .about#toblues{
 	display: none;
 }
+#_cqupt-route{
+	display: none;
+}
 #_cqupt-side-box #_cqupt-tip {
 	display: none;
 }
@@ -294,6 +297,14 @@ input[value]{
 }
 #_cqupt-adbox {
 	display: none !important;
+}
+@media screen and (max-height: 500px){
+	#_cqupt-side-box ._cqupt-side-bar-item {
+		display: none;
+	}
+	#_cqupt-side-box ._cqupt-side-bar-item[data-hidden="no"] {
+		display: block;
+	}
 }
 @media screen and (max-width: 600px){
 	.newimg{

@@ -77,7 +77,7 @@ $(function() {
                 if(code == 200) {
                     status.on(ping);
                 }else if(code == 302){
-                    status.on(ping, '备用路线');
+                    status.on(ping, '备用路线已启用');
                 }else{
                     status.unknown();
                 }
