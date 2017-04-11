@@ -77,10 +77,10 @@ $(function() {
                 if(ping <= 0){
                     status.off();
                 }else{
-                    if(ip == '202.202.43.139') {
-                        status.on(ping);
-                    }else if(ip == '121.42.46.40'){
+                    if(ip == '121.42.46.40'){
                         status.on(ping, '已启用备用路线');
+                    }else if(ip){
+                        status.on(ping);
                     }else{
                         status.unknown();
                     }
