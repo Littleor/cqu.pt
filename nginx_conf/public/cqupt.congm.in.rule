@@ -1,0 +1,16 @@
+# 内网外入 [ Public ]
+# 域名规则
+if ($cqupt ~ "^www$"){
+    rewrite ^(.*)$ https://cqupt.congm.in permanent;
+}
+if ($cqupt ~ "^jwzx$") {
+    set $cqupt "jwzx.cqupt.edu.cn";
+}
+# 白名单
+if ($cqupt !~ "cqupt.edu.cn$|^202.202.32.\d{1,3}$|^172.\d{1,3}.\d{1,3}.\d{1,3}$|^222.177.140.\d{1,3}$|^211.83.208.\d{1,3}$|^219.153.62.64$") {
+    return 403;
+}
+# 黑名单
+if ($cqupt ~ "^oa.cqupt.edu.cn$") {
+    return 403;
+}
