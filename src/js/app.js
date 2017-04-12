@@ -134,7 +134,7 @@ $(function() {
             //判断host是否为教务在线
             if (in_host == "jwzx.cqupt.edu.cn") {
                 host_reg_result = true;
-                out_host = "https://jwzx.cqupt.congm.in";
+                out_host = "http://jwzx.cqupt.congm.in";
             }else{
                 //判断host是否有端口号
                 if (in_host.indexOf(":") == -1) {
