@@ -73,11 +73,14 @@ $(function() {
             success: function(data){
                 data = JSON.parse(data);
                 var ip = data[0],
-                    ping = parseInt(data[1]);
+                    ping = parseInt(data[1]),
+                    code = data[2];
                 if(ping <= 0){
                     status.off();
+                }else if(code >= 400){
+                    status.off();
                 }else{
-                    if(ip == '121.42.46.40'){
+                    if(ip === '121.42.46.40'){
                         status.on(ping, '已启用备用路线');
                     }else if(ip){
                         status.on(ping);
@@ -87,7 +90,7 @@ $(function() {
                 }
             },
             complete: function(XMLHttpRequest){
-                if(XMLHttpRequest.status != 200){
+                if(XMLHttpRequest.status !== 200){
                     query.abort();
                     status.unknown();
                 }
