@@ -123,24 +123,25 @@ $(function() {
     //转换地址
     var turl = function (in_url) {
         var host, host_array, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, host_reg_result = false, port_reg_result = true;
+        var whiteList = /cqupt.edu.cn$|^202.202.\d{1,3}.\d{1,3}$|^172.\d{1,3}.\d{1,3}.\d{1,3}$|^222.177.140.\d{1,3}$|^211.83.208.\d{1,3}$|^219.153.62.64$/;
         var reg = function (reg, str) {
             return !!reg.test(str);
         };
         var thost = function (in_host) {
             var out_host, suffix;
             //判断host是否已为转换后的地址
-            if (in_host.indexOf("cqupt.congm.in") == -1) {
+            if (in_host.indexOf("cqupt.congm.in") === -1) {
                 suffix = ".cqupt.congm.in";
             } else {
                 suffix = "";
             }
             //判断host是否为教务在线
-            if (in_host == "jwzx.cqupt.edu.cn") {
+            if (in_host === "jwzx.cqupt.edu.cn") {
                 host_reg_result = true;
                 out_host = "http://jwzx.cqupt.congm.in";
             }else{
                 //判断host是否有端口号
-                if (in_host.indexOf(":") == -1) {
+                if (in_host.indexOf(":") === -1) {
                     host_reg_result = reg(host_reg, in_host);
                     out_host = "http://" + in_host + suffix;
                 } else {
@@ -155,6 +156,11 @@ $(function() {
         //分割原地址
         url_array = in_url.split("/");
         host = url_array[0];
+        //如果host不是白名单内域名
+        if (!reg(whiteList, host)) {
+            more_text.html('输入的地址未列入内网外入白名单，无法通过外网访问。');
+            return false;
+        }
         out_url = thost(host);
         //拼接地址
         for (var j = 1; j < url_array.length; j++) {
@@ -162,7 +168,7 @@ $(function() {
                 out_url += "/" + url_array[j];
             }
         }
-        if (url_array[url_array.length-1].indexOf(".") == -1) {
+        if (url_array[url_array.length-1].indexOf(".") === -1) {
             out_url += "/";
         }
         if (!host_reg_result) {
