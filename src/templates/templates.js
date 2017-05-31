@@ -1,4 +1,4 @@
-/*广告*/
+/*广告
 (function() {
     var google = document.createElement("script");
     google.async = "true";
@@ -40,7 +40,7 @@
     document.querySelector('#_cqupt-adbox-close').onclick = function(){
         adbox.style.display = 'none';
     };
-})();
+})();*/
 (function(){
     /* 更改标题 */
     if(location.hostname !== 'cqupt.congm.in') { document.title = '【内网外入】 ' + document.title; }
