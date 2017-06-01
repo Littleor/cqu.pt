@@ -583,7 +583,9 @@ body._cqupt-body #_cqupt-adbox{
     left: 145px;
 }
 #_cqupt-adbox ._cqupt-adbox-item {
-    margin: 5px 0;
+    margin: 5px auto;
+    text-align: center;
+
 }
 @media screen and (max-height: 500px){
     #_cqupt-side-box ._cqupt-side-bar-item[data-hidden="on"] {
