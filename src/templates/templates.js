@@ -1,5 +1,29 @@
 /* 广告 */
 (function(win,doc){
+  var ibody = doc.querySelector('body'), adbox = doc.querySelector('#_cqupt-adbox');
+  function outerHeight(el) {
+    var height = el.offsetHeight;
+    var style = getComputedStyle(el);
+    height += parseInt(style.marginTop) + parseInt(style.marginBottom);
+    return height;
+  }
+  var wHeight = win.innerHeight, adHeight = outerHeight(doc.querySelector('#_cqupt-adbox')), maxHeight = 0;
+  var bcs = ibody.children;
+  for(var i = 0; i < bcs.length; i++){
+    if(bcs[i].id.indexOf('_cqupt') === -1 && maxHeight < outerHeight(bcs[i])){
+      maxHeight = outerHeight(bcs[i]);
+    }
+  }
+  if(maxHeight){
+    ibody.style.minHeight = maxHeight + 'px';
+  }
+  if(wHeight > adHeight + maxHeight) {
+    adbox.style.top = (wHeight-adHeight) + 'px';
+  }
+  doc.querySelector('#_cqupt-adbox-close').onclick = function(){
+    adbox.style.display = 'none';
+  };
+  /* 插入广告 */
   var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
   if (!win.alimamatk_show) {
     s.charset = "gbk";
