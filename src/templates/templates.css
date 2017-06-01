@@ -583,7 +583,7 @@ body._cqupt-body #_cqupt-adbox{
     left: 145px;
 }
 #_cqupt-adbox ._cqupt-adbox-item {
-    margin: 5px auto;
+    margin: 5px auto 10px;
     text-align: center;
 }
 #_cqupt-adbox ._cqupt-adbox-item>tkbox {
