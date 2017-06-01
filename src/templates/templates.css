@@ -536,7 +536,7 @@ body._cqupt-body{
     top: 100%;
     left: 0;
     right: 0;
-    min-height: 270px;
+    min-height: 200px;
     text-align: center;
     padding: 30px 0 20px;
     margin-top: 30px;
@@ -582,7 +582,9 @@ body._cqupt-body #_cqupt-adbox{
     top: 4px;
     left: 145px;
 }
-
+#_cqupt-adbox ._cqupt-adbox-item {
+    margin: 5px 0;
+}
 @media screen and (max-height: 500px){
     #_cqupt-side-box ._cqupt-side-bar-item[data-hidden="on"] {
         display: none;
