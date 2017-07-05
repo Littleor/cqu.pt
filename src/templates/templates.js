@@ -1,4 +1,4 @@
-/* 广告 */
+/* 广告
 (function(win,doc){
   var ibody = doc.querySelector('body'), adbox = doc.querySelector('#_cqupt-adbox');
   function outerHeight(el) {
@@ -24,6 +24,7 @@
     adbox.style.display = 'none';
   };
 })(window,document);
+ */
 
 (function(){
     /* 更改标题 */
