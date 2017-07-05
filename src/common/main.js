@@ -3,8 +3,7 @@
  * */
 require('./main.css');
 
-/* 判断是否为http，cdn是否可用 */
-var _hostname = (location.protocol !== 'https:') ? '//cdn.cqupt.congm.in' : '//cqupt.congm.in';
+var _hostname = '//cqupt.congm.in';
 
 /* 插入js */
 /* CNZZ统计 */
