@@ -37,12 +37,8 @@
             route.style.display = 'none';
         });
     }
-    /* 多说 */
-    duoshuoQuery = { short_name: "cqupt-inner" };
     /* side-box */
     var title_btn = document.querySelector("#_cqupt-title"),
-        discuss_btn = document.querySelector("[data-target='#_cqupt-duosuo']"),
-        duosuo = document.querySelector("#_cqupt-duosuo"),
         side = document.querySelector("#_cqupt-side-box");
     var sideTabs = document.querySelectorAll("[data-toggle='sideTab']"),
         sideTabLen = sideTabs.length,
@@ -73,15 +69,6 @@
         side.classList.remove('_cqupt-active');
         side.classList.add('_cqupt-close');
     };
-    discuss_btn.addEventListener('click', function(){
-        var el = document.createElement('div');
-        el.setAttribute('data-thread-key', '1');
-        el.setAttribute('data-title', '内网外入');
-        el.setAttribute('data-url', 'https://cqupt.congm.in');
-        DUOSHUO.EmbedThread(el);
-        var duosuo_content = duosuo.querySelector("._cqupt-content-bd");
-        duosuo_content.replaceChild(el, duosuo_content.lastElementChild);
-    });
     // donate.json
     (function(data){
         var html = '<tbody>';
