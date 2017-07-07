@@ -281,7 +281,8 @@ input[value]{
 	background-color: rgba(255, 255, 255, 0.7);
 	color: #444;
 }
-#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover a{
+#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover a,
+#_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item:hover ._cqupt-iconfont{
 	color: #444;
 }
 #_cqupt-side-box ._cqupt-side-bar ._cqupt-side-bar-item._cqupt-active{
