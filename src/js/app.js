@@ -1,8 +1,6 @@
 require('../style.css');
 var $ = require('./jquery.min');
 require('./tagcloud.min');
-// 多说
-require('./duosuo_embed.min');
 // templates
 var sideBoxTemplates = require('../templates/templates.html');
 document.body.insertAdjacentHTML("beforeend", sideBoxTemplates);
