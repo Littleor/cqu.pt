@@ -78,9 +78,7 @@ $(function() {
                 }else if(code >= 400){
                     status.off();
                 }else{
-                    if(ip === '121.42.46.40'){
-                        status.on(ping, '已启用备用路线');
-                    }else if(ip){
+                    if(ip){
                         status.on(ping);
                     }else{
                         status.unknown();
