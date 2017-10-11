@@ -18,16 +18,16 @@ $(function() {
             },
             up = function(e) {
                 setTimeout(function() {
-                    $(e).addClass("up")
+                    $(e).removeClass("down")
                 }, t);
                 t += d;
             },
             down = function(e){
-                $(e).removeClass("up");
+                $(e).addClass("down");
             },
             toggle = function(e){
                 setTimeout(function() {
-                    $(e).toggleClass("up")
+                    $(e).toggleClass("down")
                 }, t);
                 t += d;
             };
