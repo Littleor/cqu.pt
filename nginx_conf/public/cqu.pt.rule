@@ -1,7 +1,7 @@
 # 内网外入 [ Public ]
 # 域名规则
 if ($cqupt ~ "^www$"){
-    rewrite ^(.*)$ https://cqupt.congm.in permanent;
+    rewrite ^(.*)$ https://cqu.pt permanent;
 }
 if ($cqupt ~ "^jwzx$") {
     set $cqupt "jwzx.cqupt.edu.cn";

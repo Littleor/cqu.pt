@@ -66,7 +66,7 @@ $(function() {
     var statusQuery = function(){
         status.reset();
         var query = $.ajax({
-            url: "//cqupt.congm.in/status.php?" + new Date().getTime(),
+            url: "//cqu.pt/status.php?" + new Date().getTime(),
             timeout : 10000,
             success: function(data){
                 data = JSON.parse(data);
@@ -126,15 +126,15 @@ $(function() {
         var thost = function (in_host) {
             var out_host, suffix;
             //判断host是否已为转换后的地址
-            if (in_host.indexOf("cqupt.congm.in") === -1) {
-                suffix = ".cqupt.congm.in";
+            if (in_host.indexOf("cqu.pt") === -1) {
+                suffix = ".cqu.pt";
             } else {
                 suffix = "";
             }
             //判断host是否为教务在线
             if (in_host === "jwzx.cqupt.edu.cn") {
                 host_reg_result = true;
-                out_host = "http://jwzx.cqupt.congm.in";
+                out_host = "http://jwzx.cqu.pt";
             }else{
                 //判断host是否有端口号
                 if (in_host.indexOf(":") === -1) {

@@ -28,7 +28,7 @@
 
 (function(){
     /* 更改标题 */
-    if(location.hostname !== 'cqupt.congm.in') { document.title = '【内网外入】 ' + document.title; }
+    if(location.hostname !== 'cqu.pt') { document.title = '【内网外入】 ' + document.title; }
     if(location.port == '88') {
         var route = document.querySelector("#_cqupt-route");
         route.innerHTML = '您正在使用<br>内网外入备用路线';

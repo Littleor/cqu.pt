@@ -1,6 +1,6 @@
 <?php
 
-$host = 'jwzx.cqupt.congm.in';
+$host = 'jwzx.cqu.pt';
 $url = 'http://' . $host;
 
 $ch = curl_init();

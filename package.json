@@ -1,5 +1,5 @@
 {
-  "name": "cqupt.congm.in",
+  "name": "cqu.pt",
   "version": "1.0.0",
   "description": "内网外入",
   "main": "webpack.config.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mcc108/cqupt.congm.in.git"
+    "url": "git+ssh://git@github.com/mcc108/cqu.pt.git"
   },
   "author": "Cong Min",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mcc108/cqupt.congm.in/issues"
+    "url": "https://github.com/mcc108/cqu.pt/issues"
   },
-  "homepage": "https://cqupt.congm.in",
+  "homepage": "https://cqu.pt",
   "devDependencies": {
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
