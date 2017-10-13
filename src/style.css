@@ -396,9 +396,10 @@ input[value]{
 		filter: alpha(opacity=0);
 	}
 	.main-line {
+		top: 7%;
 		width: 160px;
 		margin-left: -80px;
-		margin-top: 38px;
+		margin-top: 53px;
 	}
 	.main{
 		width: 100%;
