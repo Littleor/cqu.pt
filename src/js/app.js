@@ -183,11 +183,11 @@ $(function() {
     enter.on("click", function () {
         more.show();
         var main_input_val = $.trim(main_input.val());
-        if (main_input_val.indexOf("http://") != -1) {
+        if (main_input_val.indexOf("http://") !== -1) {
             main_input_val = main_input_val.split("http://")[1];
             main_input.val(main_input_val);
         }
-        if (main_input_val.indexOf("https://") != -1 ) {
+        if (main_input_val.indexOf("https://") !== -1 ) {
             main_input_val = main_input_val.split("https://")[1];
             main_input.val(main_input_val);
         }
@@ -196,7 +196,7 @@ $(function() {
             window.open(url);
         }
     });
-    //读取josn数据，顶部悬浮提醒框warn文本及tagList快捷链接
+    //读取josn数据，tagList快捷链接
     (function(data) {
         var tags = data.tagsList;
         $.each(tags, function (i, e) {
@@ -214,49 +214,4 @@ $(function() {
         $(".about#toblues").fadeToggle();
         setTimeout(show_about, 10000);
     }
-
-//顶部悬浮提醒框
-  var warn = $("#warn"), warn_text = $("#warn-text");
-  var s = warn.get(0), si = warn_text.get(0);
-  var s_scrollLeft, s_add = 1, tmar;
-//文字滑动
-  function mar() {
-    if (s.offsetWidth <= si.offsetWidth) {
-      s_scrollLeft = s.scrollLeft;
-      s.scrollLeft += s_add;
-      if (s_scrollLeft == s.scrollLeft) {
-        s_add = -s_add;
-      }
-      tmar = setTimeout(mar, 20);
-    }
-  }
-  //框体升降
-  var warnBox = {
-    up: function () {
-      warn.animate({ "top": "-48px" }, "slow");
-      clearTimeout(tmar);
-    },
-    down: function (text) {
-      var t = {
-        showTime: 500,
-        moveTime: 4000,
-        totalTime: 15000
-      };
-      $.each(text, function (i, e) {
-        setTimeout(function () {
-          s.scrollLeft = 0;
-          warn_text.html(e);
-          warn.animate({"top": "18px"}, "slow");
-        }, t.totalTime * i + t.showTime);
-        setTimeout(function () {
-          mar();
-        }, t.totalTime * i + t.moveTime);
-        setTimeout(function () {
-          warnBox.up();
-        }, t.totalTime * i + t.totalTime);
-      });
-    }
-  };
-  var warn_text_array = ['暂无'];
-  // warnBox.down(warn_text_array);
 });

@@ -3,7 +3,7 @@
   var mainjs = document.createElement("script");
   mainjs.src = "//cqu.pt/common/main.js";
   mainjs.charset = "utf-8";
-  if(self == top){
+  if(self === top){
     document.body.appendChild(mainjs);
   }
 })();
