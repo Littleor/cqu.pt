@@ -69,21 +69,23 @@ $(function() {
             url: "//cqu.pt/status.php?" + new Date().getTime(),
             timeout : 10000,
             success: function(data){
-                data = JSON.parse(data);
-                var ip = data[0],
-                    ping = parseInt(data[1]),
-                    code = data[2];
-                if(ping <= 0){
-                    status.off();
-                }else if(code >= 400){
-                    status.off();
-                }else{
-                    if(ip){
-                        status.on(ping);
+                try {
+                    data = JSON.parse(data);
+                    var ip = data[0],
+                        ping = parseInt(data[1]),
+                        code = data[2];
+                    if(ping <= 0){
+                        status.off();
+                    }else if(code >= 400){
+                        status.off();
                     }else{
-                        status.unknown();
+                        if(ip){
+                            status.on(ping);
+                        }else{
+                            status.unknown();
+                        }
                     }
-                }
+                }catch(e){}
             },
             complete: function(XMLHttpRequest){
                 if(XMLHttpRequest.status !== 200){
