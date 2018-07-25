@@ -157,7 +157,7 @@ $(function() {
         }
         //如果host不是白名单内域名
         if (!reg(hostWhiteList, host)) {
-            more_text.html('输入的地址未列入内网外入白名单，无法通过外网访问。');
+            more_text.html('输入的地址错误或未列入内网外入白名单，无法通过访问。');
             return false;
         }
         out_url = thost(host, port);
