@@ -120,46 +120,47 @@ $(function() {
     });
     //转换地址
     var turl = function (in_url) {
-        var host, host_array, out_url, url_array, host_reg = /^((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)){3}$|^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/, host_reg_result = false, port_reg_result = true;
-        var whiteList = /cqupt.edu.cn$|^202.202.\d{1,3}.\d{1,3}$|^172.\d{1,3}.\d{1,3}.\d{1,3}$|^222.177.140.\d{1,3}$|^211.83.208.\d{1,3}$|^219.153.62.64$/;
+        var host, port, out_url, url_array;
+        // 白名单 *.cqupt.edu.cn, 202.202.32.0/20, 172.16.0.0/12, 222.177.140.0/24, 211.83.208.0/20, 219.153.62.64/26
+        var hostWhiteList = /cqupt.edu.cn$|^202.202.((3[2-9])|(4[0-7])).\d{1,3}$|^172.((1[6-9])|(2\d)|(3[0-1])).\d{1,3}.\d{1,3}$|^222.177.140.\d{1,3}$|^211.83.((20[8-9])|(21\d)|(22[0-3])).\d{1,3}$|^219.153.62.((6[4-9])|([7-9]\d)|(1[0-1]\d)|(12[0-6]))$/;
         var reg = function (reg, str) {
             return !!reg.test(str);
         };
-        var thost = function (in_host) {
+        var thost = function (in_host, in_port) {
             var out_host, suffix;
             //判断host是否已为转换后的地址
-            if (in_host.indexOf("cqu.pt") === -1) {
-                suffix = ".cqu.pt";
+            if (in_host.indexOf("cqu.pt") !== -1) {
+                return "http://" + in_host;
             } else {
-                suffix = "";
+                suffix = ".cqu.pt";
             }
-            //判断host是否为教务在线
+            //判断是否有端口
+            if (in_port && in_port != '80') {
+                suffix = ".p-" + in_port + suffix;
+            }
+            //判断host是否为教务在线(特殊)
             if (in_host === "jwzx.cqupt.edu.cn") {
-                host_reg_result = true;
                 out_host = "http://jwzx.cqu.pt";
             }else{
-                //判断host是否有端口号
-                if (in_host.indexOf(":") === -1) {
-                    host_reg_result = reg(host_reg, in_host);
-                    out_host = "http://" + in_host + suffix;
-                } else {
-                    port_reg_result = false;
-                    host_array = in_host.split(":");
-                    host_reg_result = reg(host_reg, host_array[0]);
-                    out_host = "http://" +  host_array[0] + suffix;
-                }
+                out_host = "http://" + in_host + suffix;
             }
             return out_host;
         };
         //分割原地址
         url_array = in_url.split("/");
         host = url_array[0];
+        //提取端口
+        if (host.indexOf(":") !== -1) {
+            var host_arr = host.split(":");
+            host = host_arr[0];
+            port = host_arr[1];
+        }
         //如果host不是白名单内域名
-        if (!reg(whiteList, host)) {
+        if (!reg(hostWhiteList, host)) {
             more_text.html('输入的地址未列入内网外入白名单，无法通过外网访问。');
             return false;
         }
-        out_url = thost(host);
+        out_url = thost(host, port);
         //拼接地址
         for (var j = 1; j < url_array.length; j++) {
             if(url_array[j]){
@@ -169,28 +170,25 @@ $(function() {
         if (url_array[url_array.length-1].indexOf(".") === -1) {
             out_url += "/";
         }
-        if (!host_reg_result) {
-            more_text.html('输入的内网地址，格式有误！<br>请检查后重新输入。');
-            out_url = 0;
-        } else {
-            if (!port_reg_result) {
-                more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>温馨提醒: 内网外入只支持访问默认80端口网站!</small>');
-            } else {
-                more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>(若无法访问请检查地址或<a href="http://congm.in">联系作者Cong Min</a>)</small>');
-            }
-        }
+        more_text.html('外网地址为：<a target="_blank" href="' + out_url + '">' + out_url + '</a><br><small>(若无法访问请检查地址或<a href="http://jq.qq.com/?_wv=1027&k=2EgWhWy" target="_blank">加QQ群 312784909 寻求帮助</a>)</small>');
         return out_url;
     };
     //输入框确认点击
     enter.on("click", function () {
         more.show();
         var main_input_val = $.trim(main_input.val());
+        // 去掉http://
         if (main_input_val.indexOf("http://") !== -1) {
             main_input_val = main_input_val.split("http://")[1];
             main_input.val(main_input_val);
         }
+        // https://转换为443端口
         if (main_input_val.indexOf("https://") !== -1 ) {
             main_input_val = main_input_val.split("https://")[1];
+            //分割原地址
+            var url_array = main_input_val.split("/");
+            url_array[0] = url_array[0] + ":443";
+            main_input_val = url_array.join("/");
             main_input.val(main_input_val);
         }
         var url = turl(main_input_val);
